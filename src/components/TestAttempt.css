@@ -1,0 +1,68 @@
+.testattempt{
+  position: relative;
+}
+
+.attempt_input{
+  margin-top: 1rem;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.attempt_row{
+  display: flex;
+}
+
+.attempt_row_number{
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.attempt_row_button{
+  padding: .75rem;
+  background-color: rgb(159, 159, 159);
+  border: 1px solid lightgray;
+  cursor: pointer;
+}
+
+.attempt_output{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100px;
+}
+
+.attempt_output_item{
+  margin-left: 1rem;
+}
+
+.wronganswer{
+  color: #b22222;
+}
+
+.gradetestbutton{
+  position: absolute;
+  background-color: green;
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: bold;
+  right: 30px;
+  bottom: 120px;
+  cursor: pointer;
+}
+
+.score{
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 1rem;
+}

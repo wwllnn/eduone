@@ -1,0 +1,45 @@
+.studentpage{
+  width: 1150px;
+  height: 720px;
+  background-color: lightgrey;
+  color: black;
+  padding: 1rem;
+}
+
+.studentpage_categories{
+  display: flex;
+}
+
+.studentpage_category{
+  color: white;
+  font-weight: bold;
+  height: 30px;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.gradecenter{
+  background-color: #1B998B;
+  border-top: 5px solid black;
+}
+
+.testreports{
+  background-color: #CC5A71;
+}
+
+.studentinformation{
+  background-color: #104F55
+}
+
+.studentpage_name{
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+.selecttest{
+  margin-top: 1rem;
+  width: 150px;
+}

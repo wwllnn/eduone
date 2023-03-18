@@ -1,0 +1,35 @@
+:root{
+  --text-color: #3f3f3f;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.dashboard{
+  width: 1500px;
+  height: 720px;
+}  
+
+.dashboard_body{
+  display: flex;
+}
+
+.dashboard_head{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2d556b;
+  padding: 0 25px;
+}
+
+.dashboard_logo{
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.dashboard_logo > img{
+  height: 20px;
+}
+

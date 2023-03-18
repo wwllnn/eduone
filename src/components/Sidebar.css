@@ -1,0 +1,41 @@
+.sidebar{
+  height: 720px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.innersidebar{
+  margin-top: 1rem;
+  width: 275px;
+  height: 95%;
+  background-color: #f5f4f5;
+  overflow: auto;
+}
+
+.addstudent{
+  display: flex;
+  height: 50px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+.sidebar_icon{
+  width: 30px;
+}
+
+.sidebar_text{
+  margin-left: 1rem;
+  font-size: 1.1rem;
+}
+
+.student_list_name{
+  border-top: 1px solid grey;
+  padding: .5rem;
+  cursor: pointer;
+}

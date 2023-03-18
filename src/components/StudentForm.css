@@ -1,0 +1,150 @@
+.student_form{
+  background-color: white;
+  width: 1150px;
+  padding: 2rem 3rem;
+  color: var(--text-color);
+  display: flex;
+}
+
+.student_form_left{
+  width: 400px;
+}
+
+.student_form_right{
+  margin-top: 2rem;
+  margin-left: 2rem;
+  padding-left: 2rem;
+  border-left: 1px solid black;
+  width: 400px;
+}
+
+.form_type{
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.form_header{
+  color: var(--text-color);
+}
+
+.form_firstname{
+  margin-top: 1rem;
+}
+
+.form_middlename{
+  margin-top: 1rem;
+}
+
+.form_lastname{
+  margin-top: 1rem;
+}
+
+.input_firstname{
+  margin-top: .5rem;
+  height: 2.25rem;
+  border: 2px solid #dddddd;
+  width: 150px;
+}
+
+.input_middlename{
+  margin-top: .5rem;
+  height: 2.25rem;
+  border: 2px solid #dddddd;
+  width: 50px;
+}
+
+.input_lastname{
+  margin-top: .5rem;
+  height: 2.25rem;
+  border: 2px solid #dddddd;
+  width: 150px;
+}
+
+.form_row1{
+  display: flex;
+  justify-content: space-between;
+}
+
+.input_lastname{
+  margin-top: .5rem;
+  height: 2.25rem;
+  border: 2px solid #dddddd;
+}
+
+.form_email{
+  margin-top: 1rem;
+}
+
+.input_email{
+  margin-top: .5rem;
+  height: 2.25rem;
+  border: 2px solid #dddddd;
+  width: 100%;
+}
+
+.form_phone{
+  margin-top: 1rem;
+}
+
+.input_phone{
+  margin-top: .5rem;
+  height: 2.25rem;
+  border: 2px solid #dddddd;
+  width: 100%;
+}
+
+.form_address{
+  margin-top: 1rem;
+}
+
+.input_address{
+  margin-top: .5rem;
+  height: 2.25rem;
+  border: 2px solid #dddddd;
+  width: 100%;
+}
+
+.form_address2{
+  margin-top: 1rem;
+}
+
+.input_address2{
+  margin-top: .5rem;
+  height: 2.25rem;
+  border: 2px solid #dddddd;
+  width: 100%;
+}
+
+.form_row6{
+  margin-top: 1rem;
+  display: flex;
+  position: relative;
+}
+
+.input_zipcode{
+  margin-top: .5rem;
+  height: 2.25rem;
+  border: 2px solid #dddddd;
+  width: 100px;
+}
+
+.form_city{
+  margin-left: 1.1rem;
+}
+
+.input_city{
+  margin-top: .5rem;
+  height: 2.25rem;
+  border: 2px solid #dddddd;
+  width: 150px;
+}
+
+.form_state{
+  position: absolute;
+  right: 0;
+}
+
+.input_state{
+  margin-top: .5rem;
+}
+
