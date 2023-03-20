@@ -1,5 +1,4 @@
 .testattempt{
-  position: relative;
 }
 
 .attempt_input{
@@ -52,15 +51,15 @@
   place-items: center;
   color: white;
   font-weight: bold;
-  right: 30px;
-  bottom: 120px;
+  right: 100px;
+  bottom: 200px;
   cursor: pointer;
 }
 
 .score{
   position: absolute;
   right: 20px;
-  bottom: 10px;
+  bottom: 0;
   font-size: 1.1rem;
   font-weight: bold;
   border: 1px solid black;
