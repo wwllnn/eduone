@@ -45,7 +45,7 @@ const TestAttempt = () => {
   return (
     <div className='testattempt'>
       <div className='attempt_input'>
-      {[...Array(20)].map((r, i) => (
+      {[...Array(98)].map((r, i) => (
         <div className='attempt_row'>
           <div className='attempt_row_number'>{i+1}</div>
           <div className='attempt_row_button' onClick={() => handleClick(i+1, 'a')}>A</div>
