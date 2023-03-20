@@ -13,7 +13,7 @@
 .studentpage_category{
   color: white;
   font-weight: bold;
-  height: 30px;
+  height: 25px;
   padding: 0 1rem;
   display: flex;
   align-items: center;
@@ -36,7 +36,8 @@
 
 .studentpage_name{
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .selecttest{
