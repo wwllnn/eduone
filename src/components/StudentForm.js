@@ -1,9 +1,12 @@
 import './StudentForm.css'
 import Select from 'react-select'
+import { useFirestore } from '../hooks/useFirestore'
 
 import { useState } from 'react'
 
 const StudentForm = () => {
+
+  //form info states
   const [firstname, setFirstname] = useState('')
   const [middlename, setMiddlename] = useState('')
   const [lastname, setLastname] = useState('')
@@ -23,8 +26,6 @@ const StudentForm = () => {
   const[parent2firstname, setParent2firstname] = useState('')
   const[parent2middlename, setParent2middlename] = useState('')
   const[parent2lastname, setParent2lastname] = useState('')
-
-
 
   const USAstates = [
     {value: 'al', label: 'AL'},
@@ -79,6 +80,9 @@ const StudentForm = () => {
     {value: 'wy', label: 'WY'}
   ]
 
+  const [formError, setFormError] = useState('')
+
+
   const createStudentObject = () => {
     const studentobj = {
       firstname,
@@ -98,6 +102,49 @@ const StudentForm = () => {
       parent2middlename,
       parent2lastname
     }
+  }
+
+  const currentlocation = 'RyRc9TabpSMfQHINLsHg'
+
+  const { addDocument } = useFirestore('locations/RyRc9TabpSMfQHINLsHg/students')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setFormError(null)
+
+    if(!firstname || !lastname){
+      setFormError('Please enter a full name')
+      return
+    }
+
+    let currentDate = new Date
+    let formattedDate = currentDate.toDateString()
+
+    const studentObject = {
+      firstname,
+      middlename,
+      lastname,
+      email,
+      phone,
+      address,
+      address2,
+      zipcode,
+      city,
+      state,
+      parent1firstname,
+      parent1middlename,
+      parent1lastname,
+      parent2firstname,
+      parent2middlename,
+      parent2lastname,
+      dateAdded: formattedDate,
+      testScores: []
+    }
+
+    console.log(studentObject)
+
+    await addDocument(studentObject)
+    
   }
 
 
@@ -247,7 +294,7 @@ const StudentForm = () => {
             type='text'
             className='input_middlename'
             onChange={(e) => setParent1middlename(e.target.value)}
-            value={middlename}
+            value={parent1middlename}
             />
           </div>
           <div className='form_lastname'>
@@ -258,7 +305,7 @@ const StudentForm = () => {
             type='text'
             className='input_lastname'
             onChange={(e) => setParent1lastname(e.target.value)}
-            value={lastname}
+            value={parent1lastname}
             />
           </div>
         </div>
@@ -272,7 +319,7 @@ const StudentForm = () => {
             type='text'
             className='input_firstname'
             onChange={(e) => setParent2firstname(e.target.value)}
-            value={parent1firstname}
+            value={parent2firstname}
             />
         </div>
         <div className='form_middlename'>
@@ -298,6 +345,8 @@ const StudentForm = () => {
             />
           </div>
         </div>
+
+        <div className='form_add' onClick={handleSubmit}>Add Student</div>
       </div>
     </div>
   )

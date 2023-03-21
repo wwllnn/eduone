@@ -30,7 +30,8 @@
 }
 
 .attempt_clicked{
-  background-color: aqua;
+  background-color: #6495ed;
+  color: white;
 }
 
 .attempt_right{

@@ -1,8 +1,25 @@
 import './Sidebar.css'
 
 import { Link } from 'react-router-dom'
+import { useCollection } from "../hooks/useCollection"
+import { useEffect, useState } from 'react'
+
 
 const Sidebar = () => {
+
+  const [ studentNames, setStudentNames ] = useState([])
+
+  const locations = useCollection('locations/RyRc9TabpSMfQHINLsHg/students')
+  useEffect(() => {
+    if(locations.documents){
+      const arrayOfStudentNames = []
+      const ls = locations.documents.map(l => {
+        return l.firstname
+      })
+      setStudentNames(ls)
+      console.log(studentNames)
+    }
+  }, [locations.documents])
   return (
     <div className='sidebar'>
       <div className='innersidebar'>
