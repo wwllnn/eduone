@@ -1,6 +1,6 @@
 .student_form{
   background-color: white;
-  width: 1150px;
+  width: 100%;
   padding: 2rem 3rem;
   color: var(--text-color);
   display: flex;

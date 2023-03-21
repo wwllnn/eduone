@@ -34,6 +34,16 @@ const TestAttempt = () => {
     setShowgrade(true)
   }
 
+  const handleUpload = () => {
+    const attempt = {
+      testname: 'SAT2023PT3',
+      rightAnswers,
+      wrongAnswers,
+      score: Object.keys(rightAnswers).length() / 90,
+    }
+    console.log('generate grade and upload')
+  }
+
   return (
     <div className='testattempt'>
       <div className='attempt_input'>

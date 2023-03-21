@@ -20,14 +20,85 @@ const StudentForm = () => {
   const[parent1middlename, setParent1middlename] = useState('')
   const[parent1lastname, setParent1lastname] = useState('')
 
+  const[parent2firstname, setParent2firstname] = useState('')
+  const[parent2middlename, setParent2middlename] = useState('')
+  const[parent2lastname, setParent2lastname] = useState('')
+
 
 
   const USAstates = [
-    {value: 'tx', label: 'TX'},
+    {value: 'al', label: 'AL'},
+    {value: 'ak', label: 'AK'},
+    {value: 'az', label: 'AZ'},
+    {value: 'ar', label: 'AR'},
     {value: 'ca', label: 'CA'},
-    {value: 'ny', label: 'NY'}
+    {value: 'co', label: 'CO'},
+    {value: 'ct', label: 'CT'},
+    {value: 'de', label: 'DE'},
+    {value: 'fl', label: 'FL'},
+    {value: 'ga', label: 'GA'},
+    {value: 'hi', label: 'HI'},
+    {value: 'id', label: 'ID'},
+    {value: 'il', label: 'IL'},
+    {value: 'in', label: 'IN'},
+    {value: 'ia', lbael: 'IA'},
+    {value: 'ks', label: 'KS'},
+    {value: 'ky', label: 'KY'},
+    {value: 'la', label: 'LA'},
+    {value: 'me', label: 'ME'},
+    {value: 'md', label: 'MD'},
+    {value: 'ma', label: 'MA'},
+    {value: 'mi', label: 'MI'},
+    {value: 'mn', label: 'MN'},
+    {value: 'ms', label: 'MS'},
+    {value: 'mo', label: 'MO'},
+    {value: 'mt', label: 'MT'},
+    {value: 'ne', label: 'NE'},
+    {value: 'nv', label: 'NV'},
+    {value: 'nh', label: 'NH'},
+    {value: 'nj', label: 'NJ'},
+    {value: 'nm', label: 'NM'},
+    {value: 'ny', label: 'NY'},
+    {value: 'nc', label: 'NC'},
+    {value: 'nd', label: 'ND'},
+    {value: 'oh', label: 'OH'},
+    {value: 'ok', label: 'OK'},
+    {value: 'or', label: 'OK'},
+    {value: 'pa', label: 'PA'},
+    {value: 'ri', label: 'RI'},
+    {value: 'sc', label: 'SC'},
+    {value: 'sd', label: 'SD'},
+    {value: 'tn', label: 'TN'},
+    {value: 'tx', label: 'TX'},
+    {value: 'ut', label: 'UT'},
+    {value: 'vt', label: 'VT'},
+    {value: 'va', label: 'VA'},
+    {value: 'wa', label: 'WA'},
+    {value: 'wv', label: 'WV'},
+    {value: 'wi', label: 'WI'},
+    {value: 'wy', label: 'WY'}
   ]
 
+  const createStudentObject = () => {
+    const studentobj = {
+      firstname,
+      middlename,
+      lastname,
+      email,
+      phone,
+      address,
+      address2,
+      zipcode,
+      city,
+      state,
+      parent1firstname,
+      parent1middlename,
+      parent1lastname,
+      parent2firstname,
+      parent2middlename,
+      parent2lastname
+    }
+  }
 
 
 
@@ -164,8 +235,8 @@ const StudentForm = () => {
             required
             type='text'
             className='input_firstname'
-            onChange={(e) => setFirstname(e.target.value)}
-            value={firstname}
+            onChange={(e) => setParent1firstname(e.target.value)}
+            value={parent1firstname}
             />
         </div>
         <div className='form_middlename'>
@@ -175,7 +246,7 @@ const StudentForm = () => {
             required
             type='text'
             className='input_middlename'
-            onChange={(e) => setMiddlename(e.target.value)}
+            onChange={(e) => setParent1middlename(e.target.value)}
             value={middlename}
             />
           </div>
@@ -186,7 +257,7 @@ const StudentForm = () => {
             required
             type='text'
             className='input_lastname'
-            onChange={(e) => setLastname(e.target.value)}
+            onChange={(e) => setParent1lastname(e.target.value)}
             value={lastname}
             />
           </div>
@@ -200,8 +271,8 @@ const StudentForm = () => {
             required
             type='text'
             className='input_firstname'
-            onChange={(e) => setFirstname(e.target.value)}
-            value={firstname}
+            onChange={(e) => setParent2firstname(e.target.value)}
+            value={parent1firstname}
             />
         </div>
         <div className='form_middlename'>
@@ -211,8 +282,8 @@ const StudentForm = () => {
             required
             type='text'
             className='input_middlename'
-            onChange={(e) => setMiddlename(e.target.value)}
-            value={middlename}
+            onChange={(e) => setParent2middlename(e.target.value)}
+            value={parent2middlename}
             />
           </div>
           <div className='form_lastname'>
@@ -222,8 +293,8 @@ const StudentForm = () => {
             required
             type='text'
             className='input_lastname'
-            onChange={(e) => setLastname(e.target.value)}
-            value={lastname}
+            onChange={(e) => setParent2lastname(e.target.value)}
+            value={parent2lastname}
             />
           </div>
         </div>
