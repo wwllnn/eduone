@@ -4,7 +4,10 @@ import { useFirestore } from '../hooks/useFirestore'
 
 import { useState } from 'react'
 
+import { useParams } from 'react-router-dom'
+
 const StudentForm = () => {
+
 
   //form info states
   const [firstname, setFirstname] = useState('')

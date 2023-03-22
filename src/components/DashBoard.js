@@ -1,6 +1,6 @@
 import './DashBoard.css'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Select from 'react-select'
 
@@ -12,31 +12,43 @@ import Home from './Home'
 import { Routes, Route } from 'react-router-dom'
 
 const locations = [
-  {value: 'houston', label: 'Houston, TX'},
-  {value: 'newyork', label: 'New York City, NY'},
-  {value: 'sanfrancisco', label: 'San Francisco, CA'}
+  {value: 'RyRc9TabpSMfQHINLsHg', label: 'Sugar Land, TX'},
+  {value: 'w5y05cHtvewfkkneohRP', label: 'Frisco, TX'},
 ]
-
 
 
 const DashBoard = () => {
 
-  const [city, setCity] = useState('Sugar Land, TX')
+  const [city, setCity] = useState('RyRc9TabpSMfQHINLsHg')
+  const [currentStudent, setCurrentStudent] = useState('')
 
+  console.log(currentStudent)
+
+  const handleLocation = (location) => {
+    setCity(location.value)
+    console.log(city)
+  }
+
+ 
   return (
     <div className='dashboard'>
       <div className='dashboard_head'>
         <div className='dashboard_logo'>
           <img src='/logo.svg'/>
         </div>
-        <Select defaultValue={locations[0]} options={locations} className='dashboard_location' />
+        <Select 
+          defaultValue={locations[0]} 
+          options={locations} 
+          className='dashboard_location' 
+          onChange={handleLocation}
+        />
       </div>
       <div className='dashboard_body'>
-      <Sidebar city={city}/>
+      <Sidebar city={city} setCurrentStudent={setCurrentStudent}/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/newstudent' element={<StudentForm />} />
-        <Route path='/student/:id' element={<StudentPage />} />
+        <Route path='/student/:id' element={<StudentPage currentStudent={currentStudent}/>} />
       </Routes>
       </div>
     </div>

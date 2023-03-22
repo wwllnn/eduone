@@ -5,11 +5,11 @@ import { useCollection } from "../hooks/useCollection"
 import { useEffect, useState } from 'react'
 
 
-const Sidebar = () => {
+const Sidebar = ({city, setCurrentStudent}) => {
 
   const [ studentNames, setStudentNames ] = useState([])
  
-  const locations = useCollection('locations/RyRc9TabpSMfQHINLsHg/students')
+  const locations = useCollection(`locations/${city}/students`)
   useEffect(() => {
     if(locations.documents){
       const ls = locations.documents.map(l => {
@@ -35,13 +35,12 @@ const Sidebar = () => {
         <div className='student_list'>
           <div className='student_list_name'>Min-ho, Lee</div>
           {
-            studentNames && studentNames.map((n) => {
-              return  <Link className='link' to={'/student/' + n.id}><div className='student_list_name'>{n.name}</div></Link>
+            studentNames && studentNames.map((n, i) => {
+              return <Link key={i} className='link' to={'/student/' + n.id}>
+                <div onClick={() => setCurrentStudent(n.name)} className='student_list_name'>{n.name}</div></Link>
             })
           }
-
         </div>  
-
       </div>
     </div>
   )
