@@ -30,6 +30,172 @@ export const SAT2023PT3RWM1 = {
     27:'c'
 }
 
+export const SAT2023PT3RWM1BD = {
+    1:{
+        contentdomain: 'Craft and Structure',
+        skill:'Words in Context',
+        difficulty: 'Bronze',
+        answer: 'b'
+    },
+    2:{
+        contentdomain: 'Craft and Structure',
+        skill:'Words in Context',
+        difficulty: 'Bronze',
+        answer: 'd'
+    },
+    3:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Words in Context',
+        difficulty: 'Silver',
+        answer: 'c'
+    },
+    4:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Words in Context',
+        difficulty: 'Silver',
+        answer:'b'
+    },
+    5:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Words in Context',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    6:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Words in Context',
+        difficulty: 'Gold',
+        answer:'d'
+    },
+    7:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Central Ideas and Purpose',
+        difficulty: 'Silver',
+        answer:'a'
+    },
+    8:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Central Ideas and Details',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    9:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Central Ideas and Details',
+        difficulty: 'Bronze',
+        answer: 'a'
+    },
+    10:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Command of Textual Evidence',
+        difficulty: 'Silver',
+        answer: 'd'
+    },
+    11:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Inferences',
+        difficulty: 'Silver',
+        answer: 'a'
+    },
+    12:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Inferences',
+        difficulty: 'Bronze',
+        answer: 'b'
+    },
+    13:{
+        contentdomain: 'Information and Ideas',
+        skill:'Inferences',
+        difficulty: 'Bronze',
+        answer:'a',
+
+    },
+    14:{
+        contentdomain: 'Standard English Conventions',
+        skill: 'Boundaries',
+        difficulty: 'Gold',
+        answer:'c'
+    },
+    15:{
+        contentdomain:'Standard English Conventions',
+        skill: 'Form Structure and Sense',
+        difficulty: 'Silver',
+        answer:'a'
+    },
+    16:{
+        contentdomain:'Standard English Conventions',
+        skill: 'Boundaries',
+        difficulty: 'Bronze',
+        answer:'d'
+    },
+    17:{
+        contentdomain:'Standard English Conventions',
+        skill: 'Form Structure and Sense',
+        difficulty: 'Silver',
+        answer:'d'
+    },
+    18:{
+        contentdomain:'Standard English Conventions',
+        skill: 'Boundaries',
+        difficulty: 'Silver',
+        answer:'d'
+    },
+    19:{
+        contentdomain:'Standard English Conventions',
+        skill: 'Form Structure and Sense',
+        difficulty: 'Silver',
+        answer:'c'
+    },
+    20:{
+        contentdomain:'Standard English Conventions',
+        skill: 'Boundaries',
+        difficulty: 'Silver',
+        answer:'c'
+    },
+    21:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Transitions',
+        difficulty: 'Bronze',
+        answer:'b'
+    },
+    22:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Transitions',
+        difficulty: 'Bronze',
+        answer:'d'
+    },
+    23:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Transitions',
+        difficulty: 'Silver',
+        answer:'c'
+    },
+    24:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Rhetorical Synthesis',
+        difficulty: 'Silver',
+        answer:'a'
+    },
+    25:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Rhetorical Synthesis',
+        difficulty: 'Silver',
+        answer:'d'
+    },
+    26:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Rhetorical Synthesis',
+        difficulty: 'Silver',
+        answer:'d'
+    },
+    27:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Rhetorical Synthesis',
+        difficulty: 'Silver',
+        answer:'c'
+    }
+}
+
 export const SAT2023PT3RWM2a = [
     {28: 'b'},
     {29: 'b'},

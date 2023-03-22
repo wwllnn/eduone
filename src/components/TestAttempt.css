@@ -1,6 +1,36 @@
 .testattempt{
 }
 
+.attempt_tabs{
+  display: flex;
+  margin-top: .5rem;
+}
+
+.attempt_tab_rw{
+  padding: .25rem .5rem;
+  border-radius: 4px;
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
+
+.attempt_tab_math{
+  padding: .25rem .5rem;
+  border-radius: 4px;
+  background-color: grey;
+  color: white;
+  margin-left: .5rem;
+  cursor: pointer;
+}
+
+.attempt_tab_math_active{
+  background-color: green;
+}
+
+.attempt_tab_rw_active{
+  background-color: #9e1e1e;
+}
+
 .attempt_input{
   margin-top: 1rem;
   height: 400px;
@@ -49,7 +79,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: 100px;
-  width: 1250px;
+  width: 850px;
 }
 
 .attempt_output_item{
@@ -92,9 +122,19 @@
   font-weight: bold;
   border: 1px solid black;
   width: 100px;
-  height: 50px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
+}
+
+.modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  color: black;
 }

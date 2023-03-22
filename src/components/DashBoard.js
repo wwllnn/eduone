@@ -1,5 +1,7 @@
 import './DashBoard.css'
 
+import { useState } from 'react'
+
 import Select from 'react-select'
 
 import Sidebar from './Sidebar'
@@ -15,21 +17,26 @@ const locations = [
   {value: 'sanfrancisco', label: 'San Francisco, CA'}
 ]
 
+
+
 const DashBoard = () => {
+
+  const [city, setCity] = useState('Sugar Land, TX')
+
   return (
     <div className='dashboard'>
       <div className='dashboard_head'>
         <div className='dashboard_logo'>
-          <img src='logo.svg'/>
+          <img src='/logo.svg'/>
         </div>
         <Select defaultValue={locations[0]} options={locations} className='dashboard_location' />
       </div>
       <div className='dashboard_body'>
-      <Sidebar />
+      <Sidebar city={city}/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/newstudent' element={<StudentForm />} />
-        <Route path='/student' element={<StudentPage />} />
+        <Route path='/student/:id' element={<StudentPage />} />
       </Routes>
       </div>
     </div>

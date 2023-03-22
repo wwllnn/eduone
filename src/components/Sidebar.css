@@ -1,6 +1,6 @@
 .sidebar{
   height: 720px;
-  width: 350px;
+  width: 375px;
   display: flex;
   justify-content: center;
   background-color: white;
@@ -8,7 +8,7 @@
 
 .innersidebar{
   margin-top: 1rem;
-  width: 275px;
+  width: 250px;
   height: 95%;
   background-color: #f5f4f5;
   overflow: auto;
