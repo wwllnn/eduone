@@ -226,6 +226,171 @@ export const SAT2023PT3RWM2a = [
     {54: 'd'}
 ]
 
+export const SAT2023PT3RWM2ABD = {
+    28:{
+        contentdomain: 'Craft and Structure',
+        skill:'Words in Context',
+        difficulty: 'Bronze',
+        answer: 'b'
+    },
+    29:{
+        contentdomain: 'Craft and Structure',
+        skill:'Words in Context',
+        difficulty: 'Bronze',
+        answer: 'b'
+    },
+    30:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Words in Context',
+        difficulty: 'Bronze',
+        answer: 'c'
+    },
+    31:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Words in Context',
+        difficulty: 'Bronze',
+        answer:'b'
+    },
+    32:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Words in Context',
+        difficulty: 'Bronze',
+        answer:'d'
+    },
+    33:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Words in Context',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    34:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Text Structure and Purpose',
+        difficulty: 'Silver',
+        answer:'d'
+    },
+    35:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Text Structure and Purpose',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    36:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Cross-Text Connections',
+        difficulty: 'Silver',
+        answer: 'a'
+    },
+    37:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Central Ideas and Details',
+        difficulty: 'Silver',
+        answer: 'd'
+    },
+    38:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Command of Quantitative Evidence',
+        difficulty: 'Bronze',
+        answer: 'c'
+    },
+    39:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Command of Textual Evidence',
+        difficulty: 'Bronze',
+        answer: 'd'
+    },
+    40:{
+        contentdomain: 'Information and Ideas',
+        skill:'Command of Textual Evidence',
+        difficulty: 'Silver',
+        answer:'b',
+    },
+    41:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Command of Quantitative Evidence',
+        difficulty: 'Bronze',
+        answer:'d'
+    },
+    42:{
+        contentdomain:'Information and Ideas',
+        skill: 'Command of Quantitative Evidence',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    43:{
+        contentdomain:'Information and Ideas',
+        skill: 'Command of Textual Evidence',
+        difficulty: 'Silver',
+        answer:'d'
+    },
+    44:{
+        contentdomain:'Information and Ideas',
+        skill: 'Central Ideas and Details',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    45:{
+        contentdomain:'Standard English Conventions',
+        skill: 'Form Structure and Sense',
+        difficulty: 'Bronze',
+        answer:'b'
+    },
+    46:{
+        contentdomain:'Standard English Conventions',
+        skill: 'Boundaries',
+        difficulty: 'Silver',
+        answer:'b'
+    },
+    47:{
+        contentdomain:'Standard English Conventions',
+        skill: 'Form Structure and Sense',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    48:{
+        contentdomain: 'Standard English Conventions',
+        skill: 'Form Structure and Sense',
+        difficulty: 'Bronze',
+        answer:'d'
+    },
+    49:{
+        contentdomain: 'Standard English Conventions',
+        skill: 'Boundaries',
+        difficulty: 'Silver',
+        answer:'d'
+    },
+    50:{
+        contentdomain: 'Standard English Conventions',
+        skill: 'Form Structure and Sense',
+        difficulty: 'Bronze',
+        answer:'d'
+    },
+    51:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Transitions',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    52:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Transitions',
+        difficulty: 'Bronze',
+        answer:'c'
+    },
+    53:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Rhetorical Synthesis',
+        difficulty: 'Bronze',
+        answer:'b'
+    },
+    54:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Rhetorical Synthesis',
+        difficulty: 'Silver',
+        answer:'d'
+    }
+}
+
 export const SAT2023PT3RWM2b = [
     {28: 'd'},
     {29: 'c'},
@@ -255,6 +420,173 @@ export const SAT2023PT3RWM2b = [
     {53: 'b'},
     {54: 'b'}
 ]
+
+export const SAT2023PT3RWM2BBD = {
+    28:{
+        contentdomain: 'Craft and Structure',
+        skill:'Words in Context',
+        difficulty: 'Silver',
+        answer: 'd'
+    },
+    29:{
+        contentdomain: 'Craft and Structure',
+        skill:'Words in Context',
+        difficulty: 'Gold',
+        answer: 'd'
+    },
+    30:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Words in Context',
+        difficulty: 'Silver',
+        answer: 'c'
+    },
+    31:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Words in Context',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    32:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Words in Context',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    33:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Text Structure and Purpose',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    34:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Text Structure and Purpose',
+        difficulty: 'Silver',
+        answer:'d'
+    },
+    35:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Text Structure and Purpose',
+        difficulty: 'Silver',
+        answer:'d'
+    },
+    36:{
+        contentdomain: 'Craft and Structure',
+        skill: 'Cross-Text Connections',
+        difficulty: 'Silver',
+        answer: 'a'
+    },
+    37:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Command of Quantitative Evidence',
+        difficulty: 'Bronze',
+        answer: 'a'
+    },
+    38:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Command of Textual Evidence',
+        difficulty: 'Silver',
+        answer: 'a'
+    },
+    39:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Command of Textual Evidence',
+        difficulty: 'Silver',
+        answer: 'c'
+    },
+    40:{
+        contentdomain: 'Information and Ideas',
+        skill:'Command of Quantitative Evidence',
+        difficulty: 'Silver',
+        answer:'b',
+    },
+    41:{
+        contentdomain: 'Information and Ideas',
+        skill: 'Command of Textual Evidence',
+        difficulty: 'Gold',
+        answer:'c'
+    },
+    42:{
+        contentdomain:'Information and Ideas',
+        skill: 'Command of Quantitative Evidence',
+        difficulty: 'Silver',
+        answer:'a'
+    },
+    43:{
+        contentdomain:'Information and Ideas',
+        skill: 'Central Ideas and Details',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    44:{
+        contentdomain:'Information and Ideas',
+        skill: 'Inferences',
+        difficulty: 'Gold',
+        answer:'c'
+    },
+    45:{
+        contentdomain:'Standard English Conventions',
+        skill: 'Boundaries',
+        difficulty: 'Silver',
+        answer:'c'
+    },
+    46:{
+        contentdomain:'Standard English Conventions',
+        skill: 'Boundaries',
+        difficulty: 'Silver',
+        answer:'c'
+    },
+    47:{
+        contentdomain:'Standard English Conventions',
+        skill: 'Boundaries',
+        difficulty: 'Silver',
+        answer:'a'
+    },
+    48:{
+        contentdomain: 'Standard English Conventions',
+        skill: 'Form Structure and Sense',
+        difficulty: 'Bronze',
+        answer:'a'
+    },
+    49:{
+        contentdomain: 'Standard English Conventions',
+        skill: 'Boundaries',
+        difficulty: 'Gold',
+        answer:'b'
+    },
+    50:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Transitions',
+        difficulty: 'Silver',
+        answer:'b'
+    },
+    51:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Rhetorical Synthesis',
+        difficulty: 'Gold',
+        answer:'a'
+    },
+    52:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Rhetorical Synthesis',
+        difficulty: 'Silver',
+        answer:'d'
+    },
+    53:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Rhetorical Synthesis',
+        difficulty: 'Silver',
+        answer:'b'
+    },
+    54:{
+        contentdomain: 'Expression of Ideas',
+        skill: 'Rhetorical Synthesis',
+        difficulty: 'Bronze',
+        answer:'b'
+    }
+}
+
+
 
 export const SAT2023PT3MM1 = [
     {55: 'c'},

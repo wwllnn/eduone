@@ -51,6 +51,66 @@ const Report = ({wrongAnswers}) => {
         </div>
       </div>
       <div>
+        <div>Craft and Structure</div>
+      </div>
+
+      <div>
+        <div>Information and Ideas</div>
+      </div>
+
+      <div>
+        <div>Standard English Conventions</div>
+      </div>
+
+      <div>
+        <div>Expression of Ideas</div>
+      </div>
+
+      <div>
+        <div>Words in Context</div>
+      </div>
+
+      <div>
+        <div>Text Structure and Purpose</div>
+      </div>
+
+      <div>
+        <div>Central Ideas and Details</div>
+      </div>
+
+      <div>
+        <div>Command of Textual Evidence</div>
+      </div>
+
+      <div>
+        <div>Inferences</div>
+      </div>
+
+      <div>
+        <div>Boundaries</div>
+      </div>
+
+      <div>
+        <div>Form Structure and Sense</div>
+      </div>
+
+      <div>
+        <div>Transitions</div>
+      </div>
+
+      <div>
+        <div>Rhetorical Synthesis</div>
+      </div>
+
+      <div>
+        <div>Command of Quantitative Evidence</div>
+      </div>
+
+      <div>
+        <div>Cross-Text Connections</div>
+      </div>
+      
+      <div>
       {Object.keys(wrongAnswers).map((n) => {
         console.log(SAT2023PT3RWM1BD[n])
       })}
