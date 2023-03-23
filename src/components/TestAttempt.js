@@ -4,9 +4,9 @@ import './TestAttempt.css'
 import useGrade from '../hooks/useGrade'
 import Report from './Report'
 
-const TestAttempt = () => {
+const TestAttempt = ({ setTestObject }) => {
 
-  const { gradeSAT2023PT3 } = useGrade()
+  const { gradeSAT2023PT3, generateSAT2023PT3Skills } = useGrade()
 
   const [activeSection, setActiveSection] = useState('rw')
   const [currentAnswers, setCurrentAnswers] = useState({})
@@ -16,33 +16,26 @@ const TestAttempt = () => {
   const [showReport, setShowReport] = useState(false)
 
   const handleClick = (index, choice) => {
-
-    setCurrentAnswers(prevState => ({
-        ...prevState,
-        [index]: choice
-      })
+      setCurrentAnswers(prevState => ({
+          ...prevState,
+          [index]: choice
+        })
       )
-    }
+  }
 
-    const handleSAT2023PT3 = (currentAnswers) => {
-     const answers = gradeSAT2023PT3(currentAnswers)
-
-    
-     setRightAnswers(answers.rightNumbers)
-     setWrongAnswers(answers.wrongNumbers)
-     setShowgrade(true)
-    }
+  const handleSAT2023PT3 = (currentAnswers) => {
+    const answers = gradeSAT2023PT3(currentAnswers)
+    setRightAnswers(answers.rightNumbers)
+    setWrongAnswers(answers.wrongNumbers)
+    setShowgrade(true)
+  }
 
   const generateReport = () => {
-    setShowReport(true)
-    console.log(wrongAnswers)
-    const attempt = {
-      testname: 'SAT2023PT3',
-      rightAnswers,
-      wrongAnswers,
-    }
-    console.log(attempt)
+    const test = generateSAT2023PT3Skills()
+    setTestObject(test)
   }
+
+
 
   return (
     <div className='testattempt'>
@@ -201,7 +194,7 @@ const TestAttempt = () => {
         }</div>
         <div className='attempt_footer_right'>
           <div className='gradetestbutton' onClick={() => handleSAT2023PT3(currentAnswers)}>Grade Test</div>
-          <div className='generatebutton' onClick={() => generateReport(currentAnswers)}>Generate Report</div>
+          <div className='generatebutton' onClick={generateReport}>Generate Report</div>
           {showGrade && <div className='score'>Score : {Object.keys(currentAnswers).length-Object.keys(wrongAnswers).length} / 98</div>}
             {showReport &&  
               <div className='modal'>

@@ -1,0 +1,19 @@
+.studentinformationpage{
+margin-top: 1rem;
+}
+
+.sinfo_row{
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  border: 1px solid black;
+  margin-bottom: 1rem;
+  padding: .5rem;
+}
+
+.sinfo_row_label{
+  font-weight: bold
+}
+
+.sinfo_row_data{
+}

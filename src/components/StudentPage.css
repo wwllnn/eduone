@@ -22,16 +22,16 @@
   cursor: pointer;
 }
 
-.gradecenter{
+.category_gradecenter{
   background-color: #1B998B;
   border-top: 5px solid black;
 }
 
-.testreports{
+.category_testreports{
   background-color: #CC5A71;
 }
 
-.studentinformation{
+.category_studentinformation{
   background-color: #104F55
 }
 

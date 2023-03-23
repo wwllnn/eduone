@@ -8,9 +8,10 @@ import { useDocument } from "../hooks/useDocument"
 
 
 import { useParams } from 'react-router-dom'
+import StudentInformation from './StudentInformation'
+import TestReports from './TestReports'
 
-const StudentPage = ({ currentStudent }) => {
-
+const StudentPage = ({ currentStudent, testObject, setTestObject }) => {
 
   let { id } = useParams()
 
@@ -25,13 +26,13 @@ const StudentPage = ({ currentStudent }) => {
   return (
     <div className='studentpage'>
       <div className='studentpage_categories'>
-        <div onClick={() => setTab('gradecenter')} className='studentpage_category gradecenter'>
+        <div onClick={() => setTab('gradecenter')} className='studentpage_category category_gradecenter'>
           Grade Center
         </div>
-        <div onClick={() => setTab('testreports')} className='studentpage_category testreports'>  
+        <div onClick={() => setTab('testreports')} className='studentpage_category category_testreports'>  
           Test Reports
         </div>
-        <div onClick={() => setTab('studentinfo')} className='studentpage_category studentinformation'>
+        <div onClick={() => setTab('studentinfo')} className='studentpage_category category_studentinformation'>
           Student Information
         </div>
       </div>
@@ -39,8 +40,9 @@ const StudentPage = ({ currentStudent }) => {
         {currentStudent}
       </div>
       <div className='student_type'>Current Student</div>
-      <Select className='selecttest' placeholder={'Select Test'} options={testtypes}/>
-      <TestAttempt />
+      {tab == 'gradecenter' && <TestAttempt setTestObject={setTestObject}/>}
+      {tab == 'testreports' && <TestReports testObject={testObject} />}
+      {tab == 'studentinfo' && <StudentInformation />}
     </div>
   )
 }
