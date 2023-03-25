@@ -58,6 +58,7 @@ const TestAttempt = ({ setTestObject }) => {
 
   return (
     <div className='testattempt'>
+      <div>SAT 2023 PT3</div>
       <div className='attempt_tabs'>
         <div className={activeSection == 'rw' ? 'attempt_tab_rw attempt_tab_rw_active' : 'attempt_tab_rw'}
         onClick={() => setActiveSection('rw')}>Reading and Writing</div>

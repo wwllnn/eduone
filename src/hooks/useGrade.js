@@ -10,6 +10,7 @@ const useGrade = () => {
   //check current answers and creates object with incorrect question numbers and answers
   const gradeSAT2023PT3 = (currentAnswers) => {
     const categories = []
+    const difficulties = []
     
     let wrongNumbers = {}
     let rightNumbers = {}
@@ -29,15 +30,20 @@ const useGrade = () => {
       if(wrongNumbers.hasOwnProperty(q)){
         categories.push(SAT2023PT3RWM1BD[q].skill)
       }
+
+      if(wrongNumbers.hasOwnProperty(q)){
+        difficulties.push(SAT2023PT3RWM1BD[q].difficulty)
+      }
     })
 
 
-    console.log(categories)
-    const skills = generateSAT2023PT3Skills(categories)
+
+    console.log(difficulties)
+    const skills = generateSAT2023PT3Skills(categories, difficulties)
     return {rightNumbers, wrongNumbers, skills}
   }
 
-  const generateSAT2023PT3Skills = (categories) => {
+  const generateSAT2023PT3Skills = (categories, difficulties) => {
     let wordsincontext = 0
     let textstructureandpurpose = 0
     let centralideasanddetails = 0
@@ -50,6 +56,10 @@ const useGrade = () => {
     let rhetorical = 0
     let commandofquant = 0
     let crosstext = 0
+
+    let bronze = 0
+    let silver = 0
+    let gold = 0
     
     categories.map((category) => {
       switch(category){
@@ -90,26 +100,45 @@ const useGrade = () => {
           commandofquant+=1
           break;
       }
-
     })
 
-  let skillImprovement = {}
+    difficulties.map((difficulty) => {
+      switch(difficulty){
+        case 'Bronze':
+          bronze+=1
+          break;
+        case 'Silver':
+          silver+=1
+          break;
+        case 'Gold':
+          gold+=1
+          break;
+      }
+    })
+
+    let skillImprovement = {
+      skills:{},
+      levels:{}
+    }
   
-  skillImprovement['words in context'] = wordsincontext
-  skillImprovement['textstructureandpurpose'] = textstructureandpurpose
-  skillImprovement['centralideasanddetails'] = centralideasanddetails
-  skillImprovement['centralideasandpurpose'] = centralideasandpurpose
-  skillImprovement['commandoftext'] = commandoftext
-  skillImprovement['inferences'] = inferences
-  skillImprovement['boundaries'] = boundaries
-  skillImprovement['formstructure'] = formstructure
-  skillImprovement['transitions'] = transitions
-  skillImprovement['rhetorical'] = rhetorical
-  skillImprovement['commandofquant'] = commandofquant
-  skillImprovement['crosstext'] = crosstext
+    skillImprovement.skills['Words in Context'] = wordsincontext
+    skillImprovement.skills['Text Structure and Purpose'] = textstructureandpurpose
+    skillImprovement.skills['Central Ideas and Details'] = centralideasanddetails
+    skillImprovement.skills['Central Ideas and Purpose'] = centralideasandpurpose
+    skillImprovement.skills['Command of Text'] = commandoftext
+    skillImprovement.skills['Inferences'] = inferences
+    skillImprovement.skills['Boundaries'] = boundaries
+    skillImprovement.skills['Form Structure'] = formstructure
+    skillImprovement.skills['Transitions'] = transitions
+    skillImprovement.skills['Rhetorical'] = rhetorical
+    skillImprovement.skills['Command of Quant'] = commandofquant
+    skillImprovement.skills['Cross Text'] = crosstext
+    skillImprovement.levels['Bronze'] = bronze
+    skillImprovement.levels['Silver'] = silver
+    skillImprovement.levels['Gold'] = gold
 
   console.log(skillImprovement)
-  return skillImprovement
+   return skillImprovement
   }
 
   return {gradeSAT2023PT3, generateSAT2023PT3Skills}

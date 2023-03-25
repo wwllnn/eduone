@@ -1,3 +1,7 @@
+.testreports{
+  overflow-y: auto;
+}
+
 .testreport_button{
   background-color: maroon;
   color: white;
@@ -9,4 +13,7 @@
   margin: 1rem 0;
   border-radius: 4px;
   cursor: pointer;
+  border: none;
+  text-decoration: none!important;
 }
+

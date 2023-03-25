@@ -1,26 +1,29 @@
 import { useCollection } from "../hooks/useCollection"
-
-import { useParams } from "react-router-dom"
-
-import { Link } from "react-router-dom"
-
+//import { useParams } from "react-router-dom"
+//import { Link } from "react-router-dom"
 import './TestReports.css'
 import TestPrint from "./TestPrint"
 
-const TestReports = ({ testObject }) => {
+import { useParams } from "react-router-dom"
+import { PDFDownloadLink } from "@react-pdf/renderer"
 
-  const tests = useCollection('locations/RyRc9TabpSMfQHINLsHg/students/FzuvUVlLc1yt5UNkmDn8/testreports')
+const TestReports = ({ currentStudent }) => {
 
-  console.log(tests.documents)
+  let studentId = useParams('id')
+
+
+  const tests = useCollection(`locations/RyRc9TabpSMfQHINLsHg/students/${studentId.id}/testreports`)
 
   return (
-    <div>
+    <div className="testreports">
       {
-        tests.documents && tests.documents.map((t, i) => {
-           return <div className='testreport_button' key={i}>{t.name}</div>
+        tests && tests.documents && tests.documents.map((t, i) => {
+           return <div key={i}>      
+           <PDFDownloadLink className='link' document={<TestPrint info={t} currentStudent={currentStudent} />} fileName="FORM">
+           {({loading}) => (loading ? <button>Loading</button> : <button className="testreport_button">{t.name}</button>)}
+           </PDFDownloadLink></div>
         })
       }
-      <TestPrint />
     </div>
   )
 }

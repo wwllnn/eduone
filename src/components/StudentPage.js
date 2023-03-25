@@ -41,9 +41,8 @@ const StudentPage = ({ currentStudent }) => {
       <div className='studentpage_name'>
         {currentStudent}
       </div>
-      <div className='student_type'>Current Student</div>
       {tab == 'gradecenter' && <TestAttempt setTestObject={setTestObject}/>}
-      {tab == 'testreports' && <TestReports testObject={testObject} />}
+      {tab == 'testreports' && <TestReports testObject={testObject} currentStudent={currentStudent} />}
       {tab == 'studentinfo' && <StudentInformation />}
     </div>
   )
