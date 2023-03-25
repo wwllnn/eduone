@@ -1,12 +1,21 @@
 import { useState } from 'react'
 import './TestAttempt.css'
 
+import { useFirestore } from '../hooks/useFirestore'
+import { useParams } from 'react-router-dom'
+
 import useGrade from '../hooks/useGrade'
 import Report from './Report'
 
 const TestAttempt = ({ setTestObject }) => {
 
-  const { gradeSAT2023PT3, generateSAT2023PT3Skills } = useGrade()
+  const student = useParams('id')
+  console.log(student)
+
+  //takes in collection name
+  const { addDocument } = useFirestore('locations/RyRc9TabpSMfQHINLsHg/students/FzuvUVlLc1yt5UNkmDn8/testreports')
+
+  const { gradeSAT2023PT3 } = useGrade()
 
   const [activeSection, setActiveSection] = useState('rw')
   const [currentAnswers, setCurrentAnswers] = useState({})
@@ -23,16 +32,26 @@ const TestAttempt = ({ setTestObject }) => {
       )
   }
 
+  //takes in current answers and seperates them
+  //into right and wrong numbers to render color in the input
   const handleSAT2023PT3 = (currentAnswers) => {
     const answers = gradeSAT2023PT3(currentAnswers)
     setRightAnswers(answers.rightNumbers)
     setWrongAnswers(answers.wrongNumbers)
+    console.log(answers.skills)
+    setTestObject(answers.skills)
     setShowgrade(true)
-  }
 
-  const generateReport = () => {
-    const test = generateSAT2023PT3Skills()
-    setTestObject(test)
+    //create object for database
+    const TestName = 'SAT2023PT3'
+    const currentDate = new Date()
+    const formattedDate = currentDate.toDateString()
+    const testReport = {
+      name: TestName,
+      date: formattedDate,
+      categories: answers.skills
+    }
+    addDocument(testReport)
   }
 
 
@@ -194,7 +213,6 @@ const TestAttempt = ({ setTestObject }) => {
         }</div>
         <div className='attempt_footer_right'>
           <div className='gradetestbutton' onClick={() => handleSAT2023PT3(currentAnswers)}>Grade Test</div>
-          <div className='generatebutton' onClick={generateReport}>Generate Report</div>
           {showGrade && <div className='score'>Score : {Object.keys(currentAnswers).length-Object.keys(wrongAnswers).length} / 98</div>}
             {showReport &&  
               <div className='modal'>

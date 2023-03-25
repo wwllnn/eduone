@@ -11,11 +11,13 @@ import { useParams } from 'react-router-dom'
 import StudentInformation from './StudentInformation'
 import TestReports from './TestReports'
 
-const StudentPage = ({ currentStudent, testObject, setTestObject }) => {
+const StudentPage = ({ currentStudent }) => {
 
   let { id } = useParams()
 
   const [tab, setTab] = useState('gradecenter')
+  const [testObject, setTestObject] = useState({})
+
 
   const testtypes = [{value:'sat2023', label:'SAT2023'},{value:'act2023', label:'ACT2023'}]
 

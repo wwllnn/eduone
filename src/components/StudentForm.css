@@ -4,7 +4,6 @@
   padding: 2rem 3rem;
   color: var(--text-color);
   display: flex;
-  position: relative;
 }
 
 .student_form_left{

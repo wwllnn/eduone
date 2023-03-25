@@ -5,17 +5,17 @@ import { test1, SAT2023PT3RWM1, SAT2023PT3RWM2a, SAT2023PT3MM1, SAT2023PT3RWM1BD
 
 const useGrade = () => {
 
-  const [wrongQuestions, setWrongQuestions] = useState({})
   const [wrongCategories, setWrongCategories] = useState([])
 
   //check current answers and creates object with incorrect question numbers and answers
   const gradeSAT2023PT3 = (currentAnswers) => {
+    const categories = []
+    
     let wrongNumbers = {}
     let rightNumbers = {}
 
     //looping through current answers
     Object.entries(currentAnswers).map(([key, value]) => {
-
       //add object pair into rightNumbers if correct, wrongNumbers if incorrect
       if(value == SAT2023PT3RWM1[key]){
         rightNumbers[key] = value
@@ -24,26 +24,20 @@ const useGrade = () => {
       }
     })
 
-    console.log('hello')
-    setWrongQuestions(wrongNumbers)
-    createCategoryArray()
-    return {rightNumbers, wrongNumbers}
-  }
-
-  const createCategoryArray = () => {
-    console.log(wrongQuestions)
-    const categories = []
-
+    //see which category each wrong answer matches to
     Object.keys(SAT2023PT3RWM1BD).map((q) => {
-      if(wrongQuestions.hasOwnProperty(q)){
+      if(wrongNumbers.hasOwnProperty(q)){
         categories.push(SAT2023PT3RWM1BD[q].skill)
       }
     })
 
-    setWrongCategories(categories)
+
+    console.log(categories)
+    const skills = generateSAT2023PT3Skills(categories)
+    return {rightNumbers, wrongNumbers, skills}
   }
 
-  const generateSAT2023PT3Skills = () => {
+  const generateSAT2023PT3Skills = (categories) => {
     let wordsincontext = 0
     let textstructureandpurpose = 0
     let centralideasanddetails = 0
@@ -57,7 +51,7 @@ const useGrade = () => {
     let commandofquant = 0
     let crosstext = 0
     
-    wrongCategories.map((category) => {
+    categories.map((category) => {
       switch(category){
         case 'Words in Context':
           wordsincontext+=1
@@ -95,25 +89,26 @@ const useGrade = () => {
         case 'Command of Quantiative Evidence':
           commandofquant+=1
           break;
-    }
+      }
 
-  })
+    })
 
-  let skillImprovement = []
+  let skillImprovement = {}
   
-  skillImprovement.push({'words in context': wordsincontext})
-  skillImprovement.push({'textstructureandpurpose': textstructureandpurpose})
-  skillImprovement.push({'centralideasanddetails': centralideasanddetails})
-  skillImprovement.push({'centralideasandpurpose': centralideasandpurpose})
-  skillImprovement.push({'commandoftext': commandoftext})
-  skillImprovement.push({'inferences': inferences})
-  skillImprovement.push({'boundaries': boundaries})
-  skillImprovement.push({'formstructure': formstructure})
-  skillImprovement.push({'transitions': transitions})
-  skillImprovement.push({'rhetorical': rhetorical})
-  skillImprovement.push({'commandofquant': commandofquant})
-  skillImprovement.push({'crosstext': crosstext})
+  skillImprovement['words in context'] = wordsincontext
+  skillImprovement['textstructureandpurpose'] = textstructureandpurpose
+  skillImprovement['centralideasanddetails'] = centralideasanddetails
+  skillImprovement['centralideasandpurpose'] = centralideasandpurpose
+  skillImprovement['commandoftext'] = commandoftext
+  skillImprovement['inferences'] = inferences
+  skillImprovement['boundaries'] = boundaries
+  skillImprovement['formstructure'] = formstructure
+  skillImprovement['transitions'] = transitions
+  skillImprovement['rhetorical'] = rhetorical
+  skillImprovement['commandofquant'] = commandofquant
+  skillImprovement['crosstext'] = crosstext
 
+  console.log(skillImprovement)
   return skillImprovement
   }
 

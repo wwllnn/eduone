@@ -21,7 +21,6 @@ const DashBoard = () => {
 
   const [city, setCity] = useState('RyRc9TabpSMfQHINLsHg')
   const [currentStudent, setCurrentStudent] = useState('')
-  const [testObject, setTestObject] = useState({})
 
   const handleLocation = (location) => {
     setCity(location.value)
@@ -47,9 +46,7 @@ const DashBoard = () => {
         <Route path='/' element={<Home />} />
         <Route path='/newstudent' element={<StudentForm />} />
         <Route path='/student/:id' 
-          element={<StudentPage currentStudent={currentStudent}/>} 
-          testObject={testObject} 
-          setTestObject={setTestObject}
+          element={currentStudent && <StudentPage currentStudent={currentStudent}/>} 
         />
       </Routes>
       </div>
