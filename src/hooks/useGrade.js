@@ -25,7 +25,7 @@ const useGrade = () => {
       }
     })
 
-    //see which category each wrong answer matches to
+    //see which category each wrong answer matches to for module 1
     Object.keys(SAT2023PT3RWM1BD).map((q) => {
       if(wrongNumbers.hasOwnProperty(q)){
         categories.push(SAT2023PT3RWM1BD[q].skill)
@@ -33,6 +33,16 @@ const useGrade = () => {
 
       if(wrongNumbers.hasOwnProperty(q)){
         difficulties.push(SAT2023PT3RWM1BD[q].difficulty)
+      }
+    })
+
+    Object.keys(SAT2023PT3RWM2ABD).map((q) => {
+      if(wrongNumbers.hasOwnProperty(q)){
+        categories.push(SAT2023PT3RWM2ABD[q].skill)
+      }
+
+      if(wrongNumbers.hasOwnProperty(q)){
+        difficulties.push(SAT2023PT3RWM2ABD[q].difficulty)
       }
     })
 

@@ -10,7 +10,6 @@ import Report from './Report'
 const TestAttempt = ({ setTestObject }) => {
 
   const student = useParams('id')
-  console.log(student)
 
   //takes in collection name
   const { addDocument } = useFirestore('locations/RyRc9TabpSMfQHINLsHg/students/FzuvUVlLc1yt5UNkmDn8/testreports')
