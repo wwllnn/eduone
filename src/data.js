@@ -780,8 +780,78 @@ export const SAT2023PT3MM2ABD = {
     },
     84: {
         contentdomain: 'Heart of Algebra',
-        skill: 'Word Problems',
-        //unfinished
+        skill: 'Creating one-variable equations',
+        difficulty: 'Bronze'
+    },
+    85: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Rational Expressions and Equations',
+        difficulty: 'Silver'
+    },
+    86: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Graphing Linear Relationships',
+        difficulty: 'Bronze'
+    },
+    87: {
+        contentdomain: 'Additional Topics',
+        skill: 'Triangles, Lines and Angles',
+        difficulty: 'Bronze'
+    },
+    88: {
+        contentdomain: 'Additional Topics',
+        skill: '2D Shapes',
+        difficulty: 'Bronze'
+    },
+    89: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Building Linear Functions',
+        difficulty: 'Silver'
+    },
+    90: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Linear Inequalities',
+        difficulty: 'Bronze'
+    },
+    91: {
+        contentdomain: 'Problem Solving and Data Analysis',
+        skill: 'Scatterplots and Graphs',
+        difficulty: 'Bronze'
+    },
+    92: {
+        contentdomain: 'Passport to Advance Math',
+        skill: 'Creating Quadratic and Exponential Functions',
+        difficulty: 'Silver'
+    },
+    93: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Creating Quadratic and Exponential Functions',
+        difficulty: 'Silver'
+    },
+    94: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Algebraic Expressions',
+        difficulty: 'Silver'
+    },
+    95: {
+        contentdomain: 'Additional Topics',
+        skill: '2D Shapes',
+        difficulty: 'Bronze'
+    },
+    96: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Linear Inequalities',
+        difficulty: 'Bronze'
+    },
+    97: {
+        contentdomain: 'Passport to Advance Math',
+        skill: 'Function Notation',
+        difficulty: 'Silver'
+    },
+    98: {
+        contentdomain: 'Additional Topics',
+        skill: 'Circle Arcs, Angles and Chords',
+        difficulty: 'Gold'
     }
 }
 
@@ -885,5 +955,40 @@ export const SAT2023PT3MM2BBD = {
         contentdomain: 'Heart of Algebra',
         skill: 'One-Variable Equations',
         difficulty: 'Silver'
+    },
+    92: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Linear Inequalities',
+        difficulty: 'Gold'
+    },
+    93: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Creating Quadratic and Exponential Functions',
+        difficulty: 'Silver'
+    },
+    94: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Creating Quadratic and Exponential Functions',
+        difficulty: 'Silver'
+    },
+    95: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Solving Quadratic Equations',
+        difficulty: 'Silver'
+    },
+    96: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Solving Quadratic Equations',
+        difficulty: 'Silver'
+    },
+    97: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Building Linear Equations',
+        difficulty: 'Bronze'
+    },
+    98: {
+        contentdomain: 'Problem Solving and Data Analysis',
+        skill: 'Statistics - Shape, Center, Spread',
+        difficulty: 'Gold'
     }
 }

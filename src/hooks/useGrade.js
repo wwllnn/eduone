@@ -1,36 +1,33 @@
-import React from 'react'
-
-import { useState } from 'react'
 import { 
   SAT2023PT3RWM1, 
   SAT2023PT3RWM2a,
   SAT2023PT3RWM2b,
+
   SAT2023PT3RWM1BD, 
   SAT2023PT3RWM2ABD,
+  SAT2023PT3RWM2BBD,
+
   SAT2023PT3MM1,
   SAT2023PT3MM2A,
   SAT2023PT3MM2B,
+
   SAT2023PT3MM1BD,
   SAT2023PT3MM2ABD,
   SAT2023PT3MM2BBD,
-
-
 } from '../data.js' 
 
 const useGrade = () => {
 
   //check current answers and creates object with incorrect question numbers and answers
-  const gradeSAT2023PT3 = (currentAnswers) => {
+  const gradeSAT2023PT3 = (currentAnswersReading, currentAnswersMath) => {
     const categories = []
     const difficulties = []
 
     const categoriesRWM1 = []
-    const categoriesRWM2A = []
-    const categoriesRWM2B = []
+    const categoriesRWM2 = []
 
     const categoriesMM1 = []
-    const categoriesMM2A = []
-    const categoriesMM2B = []
+    const categoriesMM2 = []
     
     let wrongNumbers = {}
     let wrongNumbersRWM1 = {}
@@ -42,7 +39,7 @@ const useGrade = () => {
     let rightNumbers = {}
 
     //grade the first module of reading
-    Object.entries(currentAnswers).map(([key, value]) => {
+    Object.entries(currentAnswersReading).map(([key, value]) => {
       //add object pair into rightNumbers if correct, wrongNumbers if incorrect
       if(value == SAT2023PT3RWM1[key]){
         rightNumbers[key] = value
@@ -54,21 +51,23 @@ const useGrade = () => {
 
     //grade the next module of reading easy
     if(Object.keys(wrongNumbersRWM1).length() >= 10){
-      Object.entries(currentAnswers).map(([key, value]) => {
+      Object.entries(currentAnswersReading).map(([key, value]) => {
         //add object pair into rightNumbers if correct, wrongNumbers if incorrect
         if(value == SAT2023PT3RWM2a[key]){
           rightNumbers[key] = value
         } else {
           wrongNumbers[key] = value
+          wrongNumbersRWM2[key] = value
         }
       }) //or hard
     } else if(Object.keys(wrongNumbersRWM1).length() <= 10) {
-      Object.entries(currentAnswers).map(([key, value]) => {
+      Object.entries(currentAnswersReading).map(([key, value]) => {
         //add object pair into rightNumbers if correct, wrongNumbers if incorrect
         if(value == SAT2023PT3RWM2b[key]){
           rightNumbers[key] = value
         } else {
           wrongNumbers[key] = value
+          wrongNumbersRWM2[key] = value
         }
       })
     }
@@ -90,7 +89,7 @@ const useGrade = () => {
       Object.keys(SAT2023PT3RWM2ABD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
           categories.push(SAT2023PT3RWM2ABD[q].skill)
-          categoriesRWM2A.push(SAT2023PT3RWM1BD[q].skill)
+          categoriesRWM2.push(SAT2023PT3RWM1BD[q].skill)
         }
 
         if(wrongNumbers.hasOwnProperty(q)){
@@ -105,7 +104,7 @@ const useGrade = () => {
       Object.keys(SAT2023PT3RWM2ABD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
           categories.push(SAT2023PT3RWM2ABD[q].skill)
-          categoriesRWM2B.push(SAT2023PT3RWM1BD[q].skill)
+          categoriesRWM2.push(SAT2023PT3RWM1BD[q].skill)
         }
 
         if(wrongNumbers.hasOwnProperty(q)){
@@ -115,7 +114,7 @@ const useGrade = () => {
     }
 
     //grade the first module of math
-    Object.entries(currentAnswers).map(([key, value]) => {
+    Object.entries(currentAnswersMath).map(([key, value]) => {
       if(value == SAT2023PT3MM1[key]){
         rightNumbers[key] = value
       } else {
@@ -127,7 +126,7 @@ const useGrade = () => {
     //grade the next module of math easy
     if(Object.keys(wrongNumbersMM1).length() >= 10){
       //loop through currentanswers
-      Object.entries(currentAnswers).map(([key, value]) => {
+      Object.entries(currentAnswersMath).map(([key, value]) => {
         //add object pair into rightNumbers if correct, wrongNumbers if incorrect
         if(value == SAT2023PT3MM2A[key]){
           rightNumbers[key] = value
@@ -136,7 +135,7 @@ const useGrade = () => {
         }
       }) //or hard
     } else if(Object.keys(wrongNumbersMM1).length() <= 10) {
-      Object.entries(currentAnswers).map(([key, value]) => {
+      Object.entries(currentAnswersMath).map(([key, value]) => {
         //add object pair into rightNumbers if correct, wrongNumbers if incorrect
         if(value == SAT2023PT3MM2B[key]){
           rightNumbers[key] = value
@@ -163,7 +162,7 @@ const useGrade = () => {
       Object.keys(SAT2023PT3MM2ABD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
           categories.push(SAT2023PT3MM2ABD[q].skill)
-          categoriesRWM2A.push(SAT2023PT3MM2ABD[q].skill)
+          categoriesMM2.push(SAT2023PT3MM2ABD[q].skill)
         }
         if(wrongNumbers.hasOwnProperty(q)){
           difficulties.push(SAT2023PT3MM2ABD[q].difficulty)
@@ -172,15 +171,15 @@ const useGrade = () => {
     }
 
     //categorize module 2b for math
-    if(Object.keys(wrongNumbersRWM1).length() >= 10){
-      Object.keys(SAT2023PT3RWM2ABD).map((q) => {
+    if(Object.keys(wrongNumbersMM2).length() >= 10){
+      Object.keys(SAT2023PT3RWM2BBD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
-          categories.push(SAT2023PT3RWM2ABD[q].skill)
-          categoriesRWM2A.push(SAT2023PT3RWM1BD[q].skill)
+          categories.push(SAT2023PT3RWM2BBD[q].skill)
+          categoriesMM2.push(SAT2023PT3MM2BBD[q].skill)
         }
 
         if(wrongNumbers.hasOwnProperty(q)){
-          difficulties.push(SAT2023PT3RWM2ABD[q].difficulty)
+          difficulties.push(SAT2023PT3MM2BBD[q].difficulty)
         }
       })
     }
@@ -205,7 +204,6 @@ const useGrade = () => {
       difficulties
     )
     
-
     return {
       rightNumbers, 
       wrongNumbers, 
@@ -229,6 +227,36 @@ const useGrade = () => {
     let rhetorical = 0
     let commandofquant = 0
     let crosstext = 0
+
+    let onevariable = 0
+    let interpretinglinear = 0
+    let systemsoflinear = 0
+    let buildinglinear = 0
+    let creatingone = 0
+    let linearinequal = 0
+    let graphinglinear = 0
+    let expressionsincontext = 0
+    let rationalexpressions = 0
+    let rationalexponents = 0
+    let graphingnonlinear = 0
+    let creatingquadratic = 0
+    let systemsofquadratic = 0
+    let algebraicexpressions = 0
+    let functionnotation = 0
+    let solvingquadraticequations = 0
+    let inferencesfromreports = 0
+    let ratiosrates = 0
+    let linearvsexpo = 0
+    let measurement = 0
+    let handlingcategorical = 0
+    let statistics = 0
+    let scatter = 0
+    let shapes = 0
+    let triangles = 0
+    let volume = 0
+    let trigratios = 0
+    let circleequations = 0
+    let circlearcs = 0
 
     let bronze = 0
     let silver = 0
@@ -271,6 +299,93 @@ const useGrade = () => {
           break;
         case 'Command of Quantiative Evidence':
           commandofquant+=1
+          break;
+        case 'One-Variable Equations':
+          onevariable+=1
+          break;
+        case 'Interpreting Linear Functions':
+          interpretinglinear+=1
+          break;
+        case 'Systems of Linear Equations':
+          systemsoflinear+=1
+          break;
+        case 'Building Linear Functions':
+          buildinglinear+=1
+          break;
+        case 'Creating one-variable equations':
+          creatingone+=1
+          break;
+        case 'Linear Inequalities':
+          linearinequal+=1
+          break;
+        case 'Graphing Linear Relationships':
+          graphinglinear+=1
+          break;
+        case 'Expressions and Equations in Context':
+          expressionsincontext+=1
+          break;
+        case 'Rational Expressions and Equations':
+          rationalexpressions+=1
+          break;
+        case 'Rational Exponents and Radicals':
+          rationalexponents+=1
+          break;
+        case 'Graphing Nonlinear Functions':
+          graphingnonlinear+=1
+          break;
+        case 'Creating Quadratic and Exponential Functions':
+          creatingquadratic+=1
+          break;
+        case 'Systems of Quadratic and Linear Functions':
+          systemsofquadratic+=1
+          break;
+        case 'Algebraic Expressions':
+          algebraicexpressions+=1
+          break;
+        case 'Function Notation':
+          functionnotation+=1
+          break;
+        case 'Solving Quadratic Equations':
+          solvingquadraticequations+=1
+          break;
+        case 'Inferences and Conclusions From Reports':
+          inferencesfromreports+=1
+          break;
+        case 'Ratios, Rates and Proportions':
+          ratiosrates+=1
+          break;
+        case 'Linear vs. Exponential Growth':
+          linearvsexpo+=1
+          break;
+        case 'Measurement and Unit Conversion':
+          measurement+=1
+          break;
+        case 'Handling Categorical Data':
+          handlingcategorical+=1
+          break;
+        case 'Statistics - Shape, Center, Spread':
+          statistics+=1
+          break;
+        case 'Scatterplots and Graphs':
+          scatter+=1
+          break;
+        case '2D Shapes':
+          shapes+=1
+          break;
+        case 'Triangles, Lines and Angles':
+          triangles+=1
+          break;
+        case 'Volume':
+          volume+=1
+          break;
+        case 'Trig. Ratios and Pythagorean Thm.':
+          trigratios=+1
+          break;
+        case 'Circle Equations and Graphing':
+          circleequations+=1
+          break;
+        case 'Circle Arcs, Angles and Chords':
+          circlearcs+=1
           break;
       }
     })

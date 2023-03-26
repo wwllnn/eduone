@@ -17,7 +17,7 @@ const TestAttempt = ({ setTestObject }) => {
   const { gradeSAT2023PT3 } = useGrade()
 
   const [activeSection, setActiveSection] = useState('rw')
-  const [currentAnswers, setCurrentAnswers] = useState({})
+  const [currentAnswersReading, setCurrentAnswersReading] = useState({})
   const [currentAnswersMath, setCurrentAnswersMath] = useState({})
 
   const [wrongAnswers, setWrongAnswers] = useState({})
@@ -27,7 +27,7 @@ const TestAttempt = ({ setTestObject }) => {
 
   //reading
   const handleClick = (index, choice) => {
-    setCurrentAnswers(prevState => ({
+    setCurrentAnswersReading(prevState => ({
       ...prevState,
       [index]: choice
     }))
@@ -44,11 +44,11 @@ const TestAttempt = ({ setTestObject }) => {
 
   //takes in current answers and seperates them
   //into right and wrong numbers to render color in the input
-  const handleSAT2023PT3 = (currentAnswers) => {
+  const handleSAT2023PT3 = (currentAnswersReading, currentAnswersMath) => {
     //add math
 
     //grade reading
-    const answers = gradeSAT2023PT3(currentAnswers)
+    const answers = gradeSAT2023PT3(currentAnswersReading, currentAnswersMath)
     setRightAnswers(answers.rightNumbers)
     setWrongAnswers(answers.wrongNumbers)
     setTestObject(answers.skills)
@@ -82,67 +82,67 @@ const TestAttempt = ({ setTestObject }) => {
         <div key={i} className='attempt_row'>
           <div className='attempt_row_number'>{i+1}</div>
           {
-            currentAnswers[i+1] !== 'a' && 
+            currentAnswersReading[i+1] !== 'a' && 
             <div className='attempt_row_button' onClick={() => handleClick(i+1, 'a')}>A</div>
           }
           {
-            currentAnswers[i+1] === 'a' && wrongAnswers[i+1] != 'a' && rightAnswers !='a' &&
+            currentAnswersReading[i+1] === 'a' && wrongAnswers[i+1] != 'a' && rightAnswers !='a' &&
             <div className='attempt_row_button attempt_clicked' onClick={() => handleClick(i+1, 'a')}>A</div>
           }
           {
-            currentAnswers[i+1] == 'a' && rightAnswers[i+1] == 'a' &&
+            currentAnswersReading[i+1] == 'a' && rightAnswers[i+1] == 'a' &&
             <div className='attempt_row_button attempt_right' onClick={() => handleClick(i+1, 'a')}>A</div>
           }
           {
-            currentAnswers[i+1] == 'a' && wrongAnswers[i+1] == 'a' &&
+            currentAnswersReading[i+1] == 'a' && wrongAnswers[i+1] == 'a' &&
             <div className='attempt_row_button attempt_wrong' onClick={() => handleClick(i+1, 'a')}>A</div>
           }
           {
-            currentAnswers[i+1] !== 'b' && 
+            currentAnswersReading[i+1] !== 'b' && 
             <div className='attempt_row_button' onClick={() => handleClick(i+1, 'b')}>B</div>
           }
           {
-            currentAnswers[i+1] === 'b' && wrongAnswers[i+1] != 'b' && rightAnswers[i+1] !='b' &&
+            currentAnswersReading[i+1] === 'b' && wrongAnswers[i+1] != 'b' && rightAnswers[i+1] !='b' &&
             <div className='attempt_row_button attempt_clicked' onClick={() => handleClick(i+1, 'b')}>B</div>
           }
           {
-            currentAnswers[i+1] == 'b' && rightAnswers[i+1] == 'b' &&
+            currentAnswersReading[i+1] == 'b' && rightAnswers[i+1] == 'b' &&
             <div className='attempt_row_button attempt_right' onClick={() => handleClick(i+1, 'b')}>B</div>
           }
           {
-            currentAnswers[i+1] == 'b' && wrongAnswers[i+1] == 'b' &&
+            currentAnswersReading[i+1] == 'b' && wrongAnswers[i+1] == 'b' &&
             <div className='attempt_row_button attempt_wrong' onClick={() => handleClick(i+1, 'b')}>B</div>
           }
           {
-            currentAnswers[i+1] !== 'c' && 
+            currentAnswersReading[i+1] !== 'c' && 
             <div className='attempt_row_button' onClick={() => handleClick(i+1, 'c')}>C</div>
           }
           {
-            currentAnswers[i+1] === 'c' && wrongAnswers[i+1] != 'c' && rightAnswers[i+1] !='c' &&
+            currentAnswersReading[i+1] === 'c' && wrongAnswers[i+1] != 'c' && rightAnswers[i+1] !='c' &&
             <div className='attempt_row_button attempt_clicked' onClick={() => handleClick(i+1, 'c')}>C</div>
           }
           {
-            currentAnswers[i+1] === 'c' && rightAnswers[i+1] == 'c' &&
+            currentAnswersReading[i+1] === 'c' && rightAnswers[i+1] == 'c' &&
             <div className='attempt_row_button attempt_right' onClick={() => handleClick(i+1, 'c')}>C</div>
           }
           {
-            currentAnswers[i+1] == 'c' && wrongAnswers[i+1] == 'c' &&
+            currentAnswersReading[i+1] == 'c' && wrongAnswers[i+1] == 'c' &&
             <div className='attempt_row_button attempt_wrong' onClick={() => handleClick(i+1, 'c')}>B</div>
           }
           {
-            currentAnswers[i+1] !== 'd' && 
+            currentAnswersReading[i+1] !== 'd' && 
             <div className='attempt_row_button' onClick={() => handleClick(i+1, 'd')}>D</div>
           }
           {
-            currentAnswers[i+1] === 'd' && wrongAnswers[i+1] != 'd' && rightAnswers[i+1] !='d' &&
+            currentAnswersReading[i+1] === 'd' && wrongAnswers[i+1] != 'd' && rightAnswers[i+1] !='d' &&
             <div className='attempt_row_button attempt_clicked' onClick={() => handleClick(i+1, 'd')}>D</div>
           }
           {
-            currentAnswers[i+1] == 'd' && rightAnswers[i+1] == 'd' &&
+            currentAnswersReading[i+1] == 'd' && rightAnswers[i+1] == 'd' &&
             <div className='attempt_row_button attempt_right' onClick={() => handleClick(i+1, 'd')}>D</div>
           }
           {
-            currentAnswers[i+1] == 'd' && wrongAnswers[i+1] == 'd' &&
+            currentAnswersReading[i+1] == 'd' && wrongAnswers[i+1] == 'd' &&
             <div className='attempt_row_button attempt_wrong' onClick={() => handleClick(i+1, 'd')}>D</div>
           }
         </div>))}
@@ -218,7 +218,7 @@ const TestAttempt = ({ setTestObject }) => {
       </div>
       <div className='attempt_footer'>
       <div className='attempt_output'>{
-        Object.entries(currentAnswers).map(([key, value]) => {
+        Object.entries(currentAnswersReading).map(([key, value]) => {
           if(wrongAnswers.hasOwnProperty(key)){
             return <div key={key} className='attempt_output_item wronganswer'>{key} - {value}</div>
           }
@@ -226,8 +226,7 @@ const TestAttempt = ({ setTestObject }) => {
         })
         }</div>
         <div className='attempt_footer_right'>
-          <div className='gradetestbutton' onClick={() => handleSAT2023PT3(currentAnswers)}>Grade Test</div>
-          {showGrade && <div className='score'>Score : {Object.keys(currentAnswers).length-Object.keys(wrongAnswers).length} / 98</div>}
+          <div className='gradetestbutton' onClick={() => handleSAT2023PT3(currentAnswersReading, currentAnswersMath)}>Grade Test</div>
             {showReport &&  
               <div className='modal'>
                 <Report wrongAnswers={wrongAnswers} />
