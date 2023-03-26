@@ -1,5 +1,3 @@
-export const test1 = ['a','a','a','a','a','b','b','b','b','b', 'c','c','c','c','c','d','d','d','d','d']
-
 export const SAT2023PT3RWM1 = {
     1:'b',
     2:'d',
@@ -586,11 +584,306 @@ export const SAT2023PT3RWM2BBD = {
     }
 }
 
-
-
 export const SAT2023PT3MM1 = [
     {55: 'c'},
     {56: 'd'},
-    {57: '1.5, .2'},
-    {58: 'b'}
+    {57: .2},
+    {58: 'b'},
+    {59: 'b'},
+    {60: 'c'},
+    {61: 'b'},
+    {62: 'a'},
+    {63: 'a'},
+    {64: 'c'},
+    {65: 24},
+    {66: 'd'},
+    {67: 'c'},
+    {68: '80'},
+    {69: 7},
+    {70: 'a'},
+    {71: 27556},
+    {72: 'c'},
+    {73: 'c'},
+    {74: 'b'},
+    {75: -3},
+    {76: 'c'},
 ]
+
+export const SAT2023PT3MM1BD = {
+    55:{
+        contentdomain: 'Heart of Algebra',
+        skill:'One-Variable Equations',
+        difficulty: 'Bronze',
+        answer: 'c'
+    },
+    56:{
+        contentdomain: 'Heart of Algebra',
+        skill: 'Building Linear Functions',
+        difficulty: 'Bronze',
+    },
+    57:{
+        contentdomain: 'Heart of Algebra',
+        skill: 'One-Variable Equations',
+        difficulty: 'Bronze'
+    },
+    58: {
+        contentdomain: 'Additional Topics',
+        skill: 'Triangles/Lines/Angles',
+        difficulty: 'Bronze'
+    },
+    59: {
+        contentdomain: 'Uncategorized',
+        skill: 'General Math', 
+        //unfinished
+    },
+    60: {
+        contentdomain: 'Problem Solving and Data Analysis',
+        skill: 'Statistics - Shape, Center, Spread',
+        difficulty: 'Bronze'
+    },
+    61: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Systems of Quadratic and Linear Equations',
+        difficulty: 'Bronze'
+    },
+    62: {
+        contentdomain: 'Problem Solving and Data Analysis',
+        skill: 'Statistics - Shape, Center, Spread',
+        difficulty: 'Silver'
+    },
+    63: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Systems of Linear Equations',
+        difficulty: 'Bronze'
+    },
+    64: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Building Linear Equations',
+        difficulty: 'Bronze'
+    },
+    65: {
+        contentdomain: '',
+        //unfinished
+    },
+    66: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Interpreting Linear Functions',
+        difficulty: 'Bronze'
+    },
+    67: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Creating Quadratic and Exponential Functions',
+        difficulty: 'Bronze'
+    },
+    68: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Systems of Linear Equations',
+        difficulty: 'Silver'
+    },
+    69: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Solving Quadratic Equations',
+        difficulty: 'Bronze'
+    },
+    70: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Interpreting Linear Functions',
+        difficulty: 'Silver'
+    },
+    71: {
+        contentdomain: 'Problem Solving and Data Analysis',
+        skill: 'Ratios, Rates and Proportions',
+        difficulty: 'Silver'
+    },
+    72: {
+        contentdomain: 'Problem Solving and Data Analysis',
+        skill: 'Scatterplots and Graphs',
+        difficulty: 'Bronze'
+    },
+    73: {
+        contentdomain: ''
+        //unfinished
+    },
+    74: {
+        contentdomain: 'Problem Solving and Data Analysis',
+        skill: 'Linear vs Exponential Growth',
+        difficulty: 'Silver'
+    },
+    75: {
+        //unfinished
+    },
+    76: {
+        //unfinished
+    }
+}
+
+export const SAT2023PT3MM2A = [
+    {77: 'b'},
+    {78: 'b'},
+    {79: 40},
+    {80: 9},
+    {81: 2},
+    {82: 'a'},
+    {83: 'd'},
+    {84: 'c'},
+    {85: 'd'},
+    {86: 'd'},
+    {87: '70'},
+    {88: 'd'},
+    {89: 'd'},
+    {90: 'a'},
+    {91: 'b'},
+    {92: 'a'},
+    {93: 9},
+    {94: 6},
+    {95: 'd'},
+    {96: 'd'},
+    {97: 'b'},
+    {98: 'a'}
+]
+
+export const SAT2023PT3MM2ABD = {
+    77: {
+        contentdomain: 'Problem Solving and Data Analysis',
+        skill: 'Ratio, Rates and Proportions',
+        difficulty: 'Bronze'
+    },
+    78: {
+        contentdomain: 'Problem Solving and Data Analysis',
+        skill: 'Scatterplots and Graphs',
+        difficulty: 'Bronze'
+    },
+    79: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'One-Variable Equations',
+        difficulty: 'Bronze'
+    },
+    80: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'One-Variable Equations',
+        difficulty: 'Bronze'
+    },
+    81: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'One-Variable Equations',
+        difficulty: 'Bronze'
+    },
+    82: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Solving Quadratic Equations',
+        difficulty: 'Solving Quadratic Equations'
+    },
+    83: {
+        contentdomain: 'Graphing Nonlinear Functions',
+        skill: 'Graphing Nonlinear Functions',
+        difficulty: 'Bronze'
+    },
+    84: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Word Problems',
+        //unfinished
+    }
+}
+
+export const SAT2023PT3MM2B = [
+    {77: 'a'},
+    {78: 'd'},
+    {79: 'a'},
+    {80: 9},
+    {81: 'd'},
+    {82: 'b'},
+    {83: 'a'},
+    {84: 'd'},
+    {85: 76},
+    {86: 36504},
+    {87: 'c'},
+    {88: 'c'},
+    {89: 'b'},
+    {90: 'd'},
+    {91: 9},
+    {92: 182},
+    {93: 'c'},
+    {94: 'b'},
+    {95: 'b'},
+    {96: 50},
+    {97: 'a'},
+    {98: 'b'}
+]
+
+export const SAT2023PT3MM2BBD = {
+    77: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'One-Variable Equations',
+        difficulty: 'bronze'
+    },
+    78: {
+        contentdomain: 'Additional Topics',
+        skill: 'Triangles, Lines and Angles',
+        difficulty: 'Bronze',
+    },
+    79: {
+        contentdomain: 'Problem Solving and Data Analysis',
+        skill: 'Ratios, Rates and Proportions',
+        difficulty: 'Bronze'
+    },
+    80: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'One-Variable Equations',
+        difficulty: 'Bronze'
+    },
+    81: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Rational Exponents and Radicals',
+        difficulty: 'Bronze'
+    },
+    82: {
+        contentdomain: 'Additional Topics',
+        skill: 'Trig. Ratios and Pythagorean Thm.',
+        difficulty: 'Silver'
+    },
+    83: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Rational Exponents and Radicals',
+        difficulty: 'Silver'
+    },
+    84: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Rational Expressions and Equations',
+        difficulty: 'Silver'
+    },
+    85: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Rational Expressions and Equations',
+        difficulty: 'Silver'
+    },
+    86: {
+        contentdomain: 'Additional Topics',
+        skill: 'Volume',
+        difficulty: 'Silver'
+    },
+    87: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Creating Quadratic and Exponential Functions',
+        difficulty: 'Silver'
+    },
+    88: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Linear Inequalities',
+        difficulty: 'Bronze'
+    },
+    89: {
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Solving Quadratic Equations',
+        difficulty: 'Silver'
+    },
+    90: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'Systems of Linear Equations',
+        difficulty: 'Silver'
+    },
+    91: {
+        contentdomain: 'Heart of Algebra',
+        skill: 'One-Variable Equations',
+        difficulty: 'Silver'
+    }
+}

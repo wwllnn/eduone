@@ -54,9 +54,14 @@
   height: 30px;
   display: grid;
   place-items: center;
-  background-color: rgb(159, 159, 159);
+  background-color: rgb(243, 243, 243);
   border: 1px solid lightgray;
   cursor: pointer;
+}
+
+.attempt_row_input{
+  width: 3rem;
+  margin-left: .5rem;
 }
 
 .attempt_clicked{

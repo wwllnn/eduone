@@ -18,26 +18,39 @@ const TestAttempt = ({ setTestObject }) => {
 
   const [activeSection, setActiveSection] = useState('rw')
   const [currentAnswers, setCurrentAnswers] = useState({})
+  const [currentAnswersMath, setCurrentAnswersMath] = useState({})
+
   const [wrongAnswers, setWrongAnswers] = useState({})
   const [rightAnswers, setRightAnswers] = useState({})
   const [showGrade, setShowgrade] = useState(false)
   const [showReport, setShowReport] = useState(false)
 
+  //reading
   const handleClick = (index, choice) => {
-      setCurrentAnswers(prevState => ({
-          ...prevState,
-          [index]: choice
-        })
-      )
+    setCurrentAnswers(prevState => ({
+      ...prevState,
+      [index]: choice
+    }))
   }
+
+  const handleClickMath = (index, choice) => {
+    setCurrentAnswersMath(prevState => ({
+      ...prevState,
+      [index]: choice
+    }))
+  }
+
+  console.log(currentAnswersMath)
 
   //takes in current answers and seperates them
   //into right and wrong numbers to render color in the input
   const handleSAT2023PT3 = (currentAnswers) => {
+    //add math
+
+    //grade reading
     const answers = gradeSAT2023PT3(currentAnswers)
     setRightAnswers(answers.rightNumbers)
     setWrongAnswers(answers.wrongNumbers)
-    console.log(answers.skills)
     setTestObject(answers.skills)
     setShowgrade(true)
 
@@ -135,71 +148,72 @@ const TestAttempt = ({ setTestObject }) => {
         </div>))}
         {activeSection == 'm' && [...Array(44)].map((_, i) => (
         <div key={i} className='attempt_row'>
-          <div className='attempt_row_number'>{i+1}</div>
+          <div className='attempt_row_number'>{i+55}</div>
           {
-            currentAnswers[i+1] !== 'a' && 
-            <div className='attempt_row_button' onClick={() => handleClick(i+1, 'a')}>A</div>
+            currentAnswersMath[i+1] !== 'a' && 
+            <div className='attempt_row_button' onClick={() => handleClickMath(i+1, 'a')}>A</div>
           }
           {
-            currentAnswers[i+1] === 'a' && wrongAnswers[i+1] != 'a' && rightAnswers !='a' &&
-            <div className='attempt_row_button attempt_clicked' onClick={() => handleClick(i+1, 'a')}>A</div>
+            currentAnswersMath[i+1] === 'a' && wrongAnswers[i+1] != 'a' && rightAnswers !='a' &&
+            <div className='attempt_row_button attempt_clicked' onClick={() => handleClickMath(i+1, 'a')}>A</div>
           }
           {
-            currentAnswers[i+1] == 'a' && rightAnswers[i+1] == 'a' &&
-            <div className='attempt_row_button attempt_right' onClick={() => handleClick(i+1, 'a')}>A</div>
+            currentAnswersMath[i+1] == 'a' && rightAnswers[i+1] == 'a' &&
+            <div className='attempt_row_button attempt_right' onClick={() => handleClickMath(i+1, 'a')}>A</div>
           }
           {
-            currentAnswers[i+1] == 'a' && wrongAnswers[i+1] == 'a' &&
-            <div className='attempt_row_button attempt_wrong' onClick={() => handleClick(i+1, 'a')}>A</div>
+            currentAnswersMath[i+1] == 'a' && wrongAnswers[i+1] == 'a' &&
+            <div className='attempt_row_button attempt_wrong' onClick={() => handleClickMath(i+1, 'a')}>A</div>
           }
           {
-            currentAnswers[i+1] !== 'b' && 
-            <div className='attempt_row_button' onClick={() => handleClick(i+1, 'b')}>B</div>
+            currentAnswersMath[i+1] !== 'b' && 
+            <div className='attempt_row_button' onClick={() => handleClickMath(i+1, 'b')}>B</div>
           }
           {
-            currentAnswers[i+1] === 'b' && wrongAnswers[i+1] != 'b' && rightAnswers[i+1] !='b' &&
-            <div className='attempt_row_button attempt_clicked' onClick={() => handleClick(i+1, 'b')}>B</div>
+            currentAnswersMath[i+1] === 'b' && wrongAnswers[i+1] != 'b' && rightAnswers[i+1] !='b' &&
+            <div className='attempt_row_button attempt_clicked' onClick={() => handleClickMath(i+1, 'b')}>B</div>
           }
           {
-            currentAnswers[i+1] == 'b' && rightAnswers[i+1] == 'b' &&
-            <div className='attempt_row_button attempt_right' onClick={() => handleClick(i+1, 'b')}>B</div>
+            currentAnswersMath[i+1] == 'b' && rightAnswers[i+1] == 'b' &&
+            <div className='attempt_row_button attempt_right' onClick={() => handleClickMath(i+1, 'b')}>B</div>
           }
           {
-            currentAnswers[i+1] == 'b' && wrongAnswers[i+1] == 'b' &&
-            <div className='attempt_row_button attempt_wrong' onClick={() => handleClick(i+1, 'b')}>B</div>
+            currentAnswersMath[i+1] == 'b' && wrongAnswers[i+1] == 'b' &&
+            <div className='attempt_row_button attempt_wrong' onClick={() => handleClickMath(i+1, 'b')}>B</div>
           }
           {
-            currentAnswers[i+1] !== 'c' && 
-            <div className='attempt_row_button' onClick={() => handleClick(i+1, 'c')}>C</div>
+            currentAnswersMath[i+1] !== 'c' && 
+            <div className='attempt_row_button' onClick={() => handleClickMath(i+1, 'c')}>C</div>
           }
           {
-            currentAnswers[i+1] === 'c' && wrongAnswers[i+1] != 'c' && rightAnswers[i+1] !='c' &&
-            <div className='attempt_row_button attempt_clicked' onClick={() => handleClick(i+1, 'c')}>C</div>
+            currentAnswersMath[i+1] === 'c' && wrongAnswers[i+1] != 'c' && rightAnswers[i+1] !='c' &&
+            <div className='attempt_row_button attempt_clicked' onClick={() => handleClickMath(i+1, 'c')}>C</div>
           }
           {
-            currentAnswers[i+1] === 'c' && rightAnswers[i+1] == 'c' &&
-            <div className='attempt_row_button attempt_right' onClick={() => handleClick(i+1, 'c')}>C</div>
+            currentAnswersMath[i+1] === 'c' && rightAnswers[i+1] == 'c' &&
+            <div className='attempt_row_button attempt_right' onClick={() => handleClickMath(i+1, 'c')}>C</div>
           }
           {
-            currentAnswers[i+1] == 'c' && wrongAnswers[i+1] == 'c' &&
-            <div className='attempt_row_button attempt_wrong' onClick={() => handleClick(i+1, 'c')}>B</div>
+            currentAnswersMath[i+1] == 'c' && wrongAnswers[i+1] == 'c' &&
+            <div className='attempt_row_button attempt_wrong' onClick={() => handleClickMath(i+1, 'c')}>B</div>
           }
           {
-            currentAnswers[i+1] !== 'd' && 
-            <div className='attempt_row_button' onClick={() => handleClick(i+1, 'd')}>D</div>
+            currentAnswersMath[i+1] !== 'd' && 
+            <div className='attempt_row_button' onClick={() => handleClickMath(i+1, 'd')}>D</div>
           }
           {
-            currentAnswers[i+1] === 'd' && wrongAnswers[i+1] != 'd' && rightAnswers[i+1] !='d' &&
-            <div className='attempt_row_button attempt_clicked' onClick={() => handleClick(i+1, 'd')}>D</div>
+            currentAnswersMath[i+1] === 'd' && wrongAnswers[i+1] != 'd' && rightAnswers[i+1] !='d' &&
+            <div className='attempt_row_button attempt_clicked' onClick={() => handleClickMath(i+1, 'd')}>D</div>
           }
           {
-            currentAnswers[i+1] == 'd' && rightAnswers[i+1] == 'd' &&
-            <div className='attempt_row_button attempt_right' onClick={() => handleClick(i+1, 'd')}>D</div>
+            currentAnswersMath[i+1] == 'd' && rightAnswers[i+1] == 'd' &&
+            <div className='attempt_row_button attempt_right' onClick={() => handleClickMath(i+1, 'd')}>D</div>
           }
           {
-            currentAnswers[i+1] == 'd' && wrongAnswers[i+1] == 'd' &&
-            <div className='attempt_row_button attempt_wrong' onClick={() => handleClick(i+1, 'd')}>D</div>
+            currentAnswersMath[i+1] == 'd' && wrongAnswers[i+1] == 'd' &&
+            <div className='attempt_row_button attempt_wrong' onClick={() => handleClickMath(i+1, 'd')}>D</div>
           }
+          <input className='attempt_row_input' onChange={(e) => handleClickMath(i+1, e.target.value)}></input>
         </div>))}
       </div>
       <div className='attempt_footer'>
