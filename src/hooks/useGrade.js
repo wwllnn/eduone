@@ -50,7 +50,7 @@ const useGrade = () => {
     })
 
     //grade the next module of reading easy
-    if(Object.keys(wrongNumbersRWM1).length() >= 10){
+    if(Object.keys(wrongNumbersRWM1).length >= 10){
       Object.entries(currentAnswersReading).map(([key, value]) => {
         //add object pair into rightNumbers if correct, wrongNumbers if incorrect
         if(value == SAT2023PT3RWM2a[key]){
@@ -60,7 +60,7 @@ const useGrade = () => {
           wrongNumbersRWM2[key] = value
         }
       }) //or hard
-    } else if(Object.keys(wrongNumbersRWM1).length() <= 10) {
+    } else if(Object.keys(wrongNumbersRWM1).length <= 10) {
       Object.entries(currentAnswersReading).map(([key, value]) => {
         //add object pair into rightNumbers if correct, wrongNumbers if incorrect
         if(value == SAT2023PT3RWM2b[key]){
@@ -85,7 +85,7 @@ const useGrade = () => {
     })
 
     //categorize module 2a for reading
-    if(Object.keys(wrongNumbersRWM1).length() >= 10){
+    if(Object.keys(wrongNumbersRWM1).length >= 10){
       Object.keys(SAT2023PT3RWM2ABD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
           categories.push(SAT2023PT3RWM2ABD[q].skill)
@@ -99,7 +99,7 @@ const useGrade = () => {
     }
 
     //categorize module 2b for reading
-    if(Object.keys(wrongNumbersRWM1).length() <= 10){
+    if(Object.keys(wrongNumbersRWM1).length <= 10){
       //loop through answer key
       Object.keys(SAT2023PT3RWM2ABD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
@@ -124,7 +124,7 @@ const useGrade = () => {
     })
 
     //grade the next module of math easy
-    if(Object.keys(wrongNumbersMM1).length() >= 10){
+    if(Object.keys(wrongNumbersMM1).length >= 10){
       //loop through currentanswers
       Object.entries(currentAnswersMath).map(([key, value]) => {
         //add object pair into rightNumbers if correct, wrongNumbers if incorrect
@@ -134,7 +134,7 @@ const useGrade = () => {
           wrongNumbersMM2[key] = value
         }
       }) //or hard
-    } else if(Object.keys(wrongNumbersMM1).length() <= 10) {
+    } else if(Object.keys(wrongNumbersMM1).length <= 10) {
       Object.entries(currentAnswersMath).map(([key, value]) => {
         //add object pair into rightNumbers if correct, wrongNumbers if incorrect
         if(value == SAT2023PT3MM2B[key]){
@@ -158,7 +158,7 @@ const useGrade = () => {
     })
 
     //categorize module 2a for math
-    if(Object.keys(wrongNumbersMM1).length() >= 10){
+    if(Object.keys(wrongNumbersMM1).length >= 10){
       Object.keys(SAT2023PT3MM2ABD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
           categories.push(SAT2023PT3MM2ABD[q].skill)
@@ -171,7 +171,7 @@ const useGrade = () => {
     }
 
     //categorize module 2b for math
-    if(Object.keys(wrongNumbersMM2).length() >= 10){
+    if(Object.keys(wrongNumbersMM2).length >= 10){
       Object.keys(SAT2023PT3RWM2BBD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
           categories.push(SAT2023PT3RWM2BBD[q].skill)
@@ -203,6 +203,7 @@ const useGrade = () => {
       categories,
       difficulties
     )
+    
     
     return {
       rightNumbers, 
@@ -275,7 +276,7 @@ const useGrade = () => {
           break;
         case 'Central Ideas and Purpose':
           centralideasandpurpose+=1
-        break;
+          break;
         case 'Cross-Text Connections':
           crosstext+=1
           break;
@@ -421,6 +422,36 @@ const useGrade = () => {
     skillImprovement.skills['Rhetorical'] = rhetorical
     skillImprovement.skills['Command of Quant'] = commandofquant
     skillImprovement.skills['Cross Text'] = crosstext
+
+    skillImprovement.skills['One-Variable Equations'] = onevariable
+    skillImprovement.skills['Interpreting Linear Functions'] = interpretinglinear
+    skillImprovement.skills['Systems of Linear Equations'] = systemsoflinear
+    skillImprovement.skills['Building Linear Functions'] = buildinglinear
+    skillImprovement.skills['Creating one-variable equations'] = creatingone
+    skillImprovement.skills['Linear Inequalities'] = linearinequal
+    skillImprovement.skills['Graphing Linear Relationships'] = graphinglinear
+    skillImprovement.skills['Expressions and Equations in Context'] = expressionsincontext
+    skillImprovement.skills['Rational Expressions and Equations'] = rationalexpressions
+    skillImprovement.skills['Rational Exponents and Radicals'] = rationalexponents
+    skillImprovement.skills['Graphing Nonlinear Functions'] = graphingnonlinear
+    skillImprovement.skills['Creating Quadratic and Exponential Functions'] = creatingquadratic
+    skillImprovement.skills['Algebraic Expressions'] = algebraicexpressions
+    skillImprovement.skills['Function Notation'] = functionnotation
+    skillImprovement.skills['Solving Quadratic Equations'] = solvingquadraticequations
+    skillImprovement.skills['Inferences and Conclusions From Reports'] = inferencesfromreports
+    skillImprovement.skills['Ratios, Rates and Proportions'] = ratiosrates
+    skillImprovement.skills['Linear vs. Exponential Growth'] = linearvsexpo
+    skillImprovement.skills['Measurement and Unit Conversion'] = measurement
+    skillImprovement.skills['Handling Categorical Data'] = handlingcategorical
+    skillImprovement.skills['Statistics - Shape, Center, Spread'] = statistics
+    skillImprovement.skills['Scatterplots and Graphs'] = scatter
+    skillImprovement.skills['2D Shapes'] = shapes
+    skillImprovement.skills['Triangles, Lines and Angles'] = triangles
+    skillImprovement.skills['Volume'] = volume
+    skillImprovement.skills['Trig. Ratios and Pythagorean Thm.'] = trigratios
+    skillImprovement.skills['Circle Equations and Graphing'] = circleequations
+    skillImprovement.skills['Circle Arc, Angles, Chords'] = circlearcs
+
     skillImprovement.levels['Bronze'] = bronze
     skillImprovement.levels['Silver'] = silver
     skillImprovement.levels['Gold'] = gold
