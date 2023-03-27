@@ -17,6 +17,10 @@ const TestReports = ({ currentStudent }) => {
   return (
     <div className="testreports">
       {
+        tests && tests.documents && tests.documents.length == 0 && 
+        <div>No tests yet</div>
+      }
+      {
         tests && tests.documents && tests.documents.map((t, i) => {
            return <div key={i}>      
            <PDFDownloadLink className='link' document={<TestPrint info={t} currentStudent={currentStudent} />} fileName="FORM">

@@ -1,7 +1,7 @@
 import { 
   SAT2023PT3RWM1, 
-  SAT2023PT3RWM2a,
-  SAT2023PT3RWM2b,
+  SAT2023PT3RWM2A,
+  SAT2023PT3RWM2B,
 
   SAT2023PT3RWM1BD, 
   SAT2023PT3RWM2ABD,
@@ -23,11 +23,12 @@ const useGrade = () => {
     const categories = []
     const difficulties = []
 
-    const categoriesRWM1 = []
-    const categoriesRWM2 = []
+    const categoriesRW = []
+    const difficultiesRW = []
 
-    const categoriesMM1 = []
-    const categoriesMM2 = []
+    const categoriesM = []
+    const difficultiesM = []
+
     
     let wrongNumbers = {}
     let wrongNumbersRWM1 = {}
@@ -53,7 +54,7 @@ const useGrade = () => {
     if(Object.keys(wrongNumbersRWM1).length >= 10){
       Object.entries(currentAnswersReading).map(([key, value]) => {
         //add object pair into rightNumbers if correct, wrongNumbers if incorrect
-        if(value == SAT2023PT3RWM2a[key]){
+        if(value == SAT2023PT3RWM2A[key]){
           rightNumbers[key] = value
         } else {
           wrongNumbers[key] = value
@@ -63,7 +64,7 @@ const useGrade = () => {
     } else if(Object.keys(wrongNumbersRWM1).length <= 10) {
       Object.entries(currentAnswersReading).map(([key, value]) => {
         //add object pair into rightNumbers if correct, wrongNumbers if incorrect
-        if(value == SAT2023PT3RWM2b[key]){
+        if(value == SAT2023PT3RWM2B[key]){
           rightNumbers[key] = value
         } else {
           wrongNumbers[key] = value
@@ -75,12 +76,11 @@ const useGrade = () => {
     //see which category each wrong answer matches to for module 1 rw
     Object.keys(SAT2023PT3RWM1BD).map((q) => {
       if(wrongNumbersRWM1.hasOwnProperty(q)){
-        categories.push(SAT2023PT3RWM1BD[q].skill)
-        categoriesRWM1.push(SAT2023PT3RWM1BD[q].skill)
+        categoriesRW.push(SAT2023PT3RWM1BD[q].skill)
       }
 
       if(wrongNumbers.hasOwnProperty(q)){
-        difficulties.push(SAT2023PT3RWM1BD[q].difficulty)
+        difficultiesRW.push(SAT2023PT3RWM1BD[q].difficulty)
       }
     })
 
@@ -88,12 +88,11 @@ const useGrade = () => {
     if(Object.keys(wrongNumbersRWM1).length >= 10){
       Object.keys(SAT2023PT3RWM2ABD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
-          categories.push(SAT2023PT3RWM2ABD[q].skill)
-          categoriesRWM2.push(SAT2023PT3RWM1BD[q].skill)
+          categoriesRW.push(SAT2023PT3RWM1BD[q].skill)
         }
 
         if(wrongNumbers.hasOwnProperty(q)){
-          difficulties.push(SAT2023PT3RWM2ABD[q].difficulty)
+          difficultiesRW.push(SAT2023PT3RWM2ABD[q].difficulty)
         }
       })
     }
@@ -103,12 +102,11 @@ const useGrade = () => {
       //loop through answer key
       Object.keys(SAT2023PT3RWM2ABD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
-          categories.push(SAT2023PT3RWM2ABD[q].skill)
-          categoriesRWM2.push(SAT2023PT3RWM1BD[q].skill)
+          categoriesRW.push(SAT2023PT3RWM1BD[q].skill)
         }
 
         if(wrongNumbers.hasOwnProperty(q)){
-          difficulties.push(SAT2023PT3RWM2ABD[q].difficulty)
+          difficultiesRW.push(SAT2023PT3RWM2ABD[q].difficulty)
         }
       })
     }
@@ -148,12 +146,11 @@ const useGrade = () => {
     //see which category each wrong answer matches to for module 1 math
     Object.keys(SAT2023PT3MM1BD).map((q) => {
       if(wrongNumbersMM1.hasOwnProperty(q)){
-        categories.push(SAT2023PT3MM1BD[q].skill)
-        categoriesMM1.push(SAT2023PT3MM1BD[q].skill)
+        categoriesM.push(SAT2023PT3MM1BD[q].skill)
       }
 
       if(wrongNumbersMM1.hasOwnProperty(q)){
-        difficulties.push(SAT2023PT3MM1BD[q].difficulty)
+        difficultiesM.push(SAT2023PT3MM1BD[q].difficulty)
       }
     })
 
@@ -161,11 +158,10 @@ const useGrade = () => {
     if(Object.keys(wrongNumbersMM1).length >= 10){
       Object.keys(SAT2023PT3MM2ABD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
-          categories.push(SAT2023PT3MM2ABD[q].skill)
-          categoriesMM2.push(SAT2023PT3MM2ABD[q].skill)
+          categoriesM.push(SAT2023PT3MM2ABD[q].skill)
         }
         if(wrongNumbers.hasOwnProperty(q)){
-          difficulties.push(SAT2023PT3MM2ABD[q].difficulty)
+          difficultiesM.push(SAT2023PT3MM2ABD[q].difficulty)
         }
       })
     }
@@ -174,35 +170,31 @@ const useGrade = () => {
     if(Object.keys(wrongNumbersMM2).length >= 10){
       Object.keys(SAT2023PT3RWM2BBD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
-          categories.push(SAT2023PT3RWM2BBD[q].skill)
-          categoriesMM2.push(SAT2023PT3MM2BBD[q].skill)
+          categoriesM.push(SAT2023PT3RWM2BBD[q].skill)
         }
 
         if(wrongNumbers.hasOwnProperty(q)){
-          difficulties.push(SAT2023PT3MM2BBD[q].difficulty)
+          difficultiesM.push(SAT2023PT3MM2BBD[q].difficulty)
         }
       })
     }
 
-    const skills = generateSAT2023PT3Skills(
-      categories, 
-      difficulties
+    //get nested object of labeled skills and number pair
+
+    const skillsRW = generateSAT2023PT3Skills(
+      categoriesRW, 
+      difficultiesRW
     )
 
-    const skillsRWM1 = generateSAT2023PT3Skills(
-      categories, 
-      difficulties
+    const skillsM = generateSAT2023PT3Skills(
+      categoriesM,
+      difficultiesM
     )
 
-    const skillsRWM2A = generateSAT2023PT3Skills(
-      categories,
-      difficulties
-    )
-
-    const skillsRWM2B = generateSAT2023PT3Skills(
-      categories,
-      difficulties
-    )
+    const skillsObject = {
+      skillsRW,
+      skillsM,
+    }
     
     
     return {
