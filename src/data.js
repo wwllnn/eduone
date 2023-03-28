@@ -628,13 +628,13 @@ export const SAT2023PT3MM1BD = {
     },
     58: {
         contentdomain: 'Additional Topics',
-        skill: 'Triangles/Lines/Angles',
+        skill: 'Triangles, Lines and Angles',
         difficulty: 'Bronze'
     },
     59: {
-        contentdomain: 'Uncategorized',
-        skill: 'General Math', 
-        //unfinished
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Algebraic Expressions', 
+        difficulty: 'Silver'
     },
     60: {
         contentdomain: 'Problem Solving and Data Analysis',
@@ -643,7 +643,7 @@ export const SAT2023PT3MM1BD = {
     },
     61: {
         contentdomain: 'Passport to Advanced Math',
-        skill: 'Systems of Quadratic and Linear Equations',
+        skill: 'Systems of Quadratic and Linear Functions',
         difficulty: 'Bronze'
     },
     62: {
@@ -658,12 +658,13 @@ export const SAT2023PT3MM1BD = {
     },
     64: {
         contentdomain: 'Heart of Algebra',
-        skill: 'Building Linear Equations',
+        skill: 'Building Linear Functions',
         difficulty: 'Bronze'
     },
     65: {
-        contentdomain: '',
-        //unfinished
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Rational Expressions and Equations',
+        difficulty: 'Silver'
     },
     66: {
         contentdomain: 'Heart of Algebra',
@@ -701,19 +702,23 @@ export const SAT2023PT3MM1BD = {
         difficulty: 'Bronze'
     },
     73: {
-        contentdomain: ''
-        //unfinished
+        contentdomain: 'Additional Topics',
+        skill: 'Triangles, Lines and Angles'
     },
     74: {
         contentdomain: 'Problem Solving and Data Analysis',
-        skill: 'Linear vs Exponential Growth',
+        skill: 'Linear vs. Exponential Growth',
         difficulty: 'Silver'
     },
     75: {
-        //unfinished
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Solving Quadratic Equations',
+        difficulty: 'Silver'
     },
     76: {
-        //unfinished
+        contentdomain: 'Passport to Advanced Math',
+        skill: 'Expressions and Equations in Context',
+        difficulty: 'Gold'
     }
 }
 
@@ -780,7 +785,7 @@ export const SAT2023PT3MM2ABD = {
     },
     84: {
         contentdomain: 'Heart of Algebra',
-        skill: 'Creating one-variable equations',
+        skill: 'Creating One-Variable Equations',
         difficulty: 'Bronze'
     },
     85: {

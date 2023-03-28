@@ -156,3 +156,12 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.flex{
+  display: flex;
+}
+
+.testattempt_scoreinput{
+  width: 50px;
+  margin-left: 1rem;
+}

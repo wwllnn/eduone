@@ -20,14 +20,12 @@ const useGrade = () => {
 
   //check current answers and creates object with incorrect question numbers and answers
   const gradeSAT2023PT3 = (currentAnswersReading, currentAnswersMath) => {
-    const categories = []
-    const difficulties = []
 
-    const categoriesRW = []
-    const difficultiesRW = []
+    const categoriesRW = {}
+    const difficultiesRW = {}
 
-    const categoriesM = []
-    const difficultiesM = []
+    const categoriesM = {}
+    const difficultiesM = {}
 
     
     let wrongNumbers = {}
@@ -74,13 +72,13 @@ const useGrade = () => {
     }
 
     //see which category each wrong answer matches to for module 1 rw
+
+    //map over the answer key and if the wrong numbers has a matching key then
+    //have a new pair with key and skill name added to the category object
     Object.keys(SAT2023PT3RWM1BD).map((q) => {
       if(wrongNumbersRWM1.hasOwnProperty(q)){
-        categoriesRW.push(SAT2023PT3RWM1BD[q].skill)
-      }
-
-      if(wrongNumbers.hasOwnProperty(q)){
-        difficultiesRW.push(SAT2023PT3RWM1BD[q].difficulty)
+        categoriesRW[q] = SAT2023PT3RWM1BD[q].skill
+        difficultiesRW[q] = SAT2023PT3RWM1BD[q].difficulty
       }
     })
 
@@ -88,11 +86,8 @@ const useGrade = () => {
     if(Object.keys(wrongNumbersRWM1).length >= 10){
       Object.keys(SAT2023PT3RWM2ABD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
-          categoriesRW.push(SAT2023PT3RWM1BD[q].skill)
-        }
-
-        if(wrongNumbers.hasOwnProperty(q)){
-          difficultiesRW.push(SAT2023PT3RWM2ABD[q].difficulty)
+          categoriesRW[q] = SAT2023PT3RWM2ABD[q].skill
+          difficultiesRW[q] = SAT2023PT3RWM2ABD[q].difficulty
         }
       })
     }
@@ -102,11 +97,8 @@ const useGrade = () => {
       //loop through answer key
       Object.keys(SAT2023PT3RWM2ABD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
-          categoriesRW.push(SAT2023PT3RWM1BD[q].skill)
-        }
-
-        if(wrongNumbers.hasOwnProperty(q)){
-          difficultiesRW.push(SAT2023PT3RWM2ABD[q].difficulty)
+          categoriesRW[q] = SAT2023PT3RWM2ABD[q].skill
+          difficultiesRW[q] = SAT2023PT3RWM2ABD[q].difficulty
         }
       })
     }
@@ -146,11 +138,8 @@ const useGrade = () => {
     //see which category each wrong answer matches to for module 1 math
     Object.keys(SAT2023PT3MM1BD).map((q) => {
       if(wrongNumbersMM1.hasOwnProperty(q)){
-        categoriesM.push(SAT2023PT3MM1BD[q].skill)
-      }
-
-      if(wrongNumbersMM1.hasOwnProperty(q)){
-        difficultiesM.push(SAT2023PT3MM1BD[q].difficulty)
+        categoriesM[q] = SAT2023PT3MM1BD[q].skill
+        difficultiesM[q] = SAT2023PT3MM1BD[q].difficulty
       }
     })
 
@@ -158,52 +147,56 @@ const useGrade = () => {
     if(Object.keys(wrongNumbersMM1).length >= 10){
       Object.keys(SAT2023PT3MM2ABD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
-          categoriesM.push(SAT2023PT3MM2ABD[q].skill)
-        }
-        if(wrongNumbers.hasOwnProperty(q)){
-          difficultiesM.push(SAT2023PT3MM2ABD[q].difficulty)
+          categoriesM[q] = SAT2023PT3MM2ABD[q].skill
+          difficultiesM[q] = SAT2023PT3MM2ABD[q].difficulty
         }
       })
     }
 
     //categorize module 2b for math
     if(Object.keys(wrongNumbersMM2).length >= 10){
-      Object.keys(SAT2023PT3RWM2BBD).map((q) => {
+      Object.keys(SAT2023PT3MM2BBD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
-          categoriesM.push(SAT2023PT3RWM2BBD[q].skill)
-        }
-
-        if(wrongNumbers.hasOwnProperty(q)){
-          difficultiesM.push(SAT2023PT3MM2BBD[q].difficulty)
+          categoriesM[q] = SAT2023PT3MM2BBD[q].skill
+          difficultiesM[q] = SAT2023PT3MM2BBD[q].difficulty
         }
       })
     }
 
     //get nested object of labeled skills and number pair
 
+    for(let key in categoriesRW) {
+      console.log(key + ":", categoriesRW[key]);
+    }
+    console.log('crw' + categoriesRW[1])
+
     const skillsRW = generateSAT2023PT3Skills(
       categoriesRW, 
       difficultiesRW
     )
+
+    console.log('rw' + skillsRW)
+
+
+    console.log('cm' + categoriesM)
 
     const skillsM = generateSAT2023PT3Skills(
       categoriesM,
       difficultiesM
     )
 
+    console.log('m' + skillsM)
+
     const skillsObject = {
       skillsRW,
       skillsM,
     }
     
-    
+    console.log('obj' + skillsObject)
     return {
       rightNumbers, 
       wrongNumbers, 
-      skills,
-      skillsRWM1,
-      skillsRWM2A,
-      skillsRWM2B
+      skillsObject
     }
   }
 
@@ -255,8 +248,8 @@ const useGrade = () => {
     let silver = 0
     let gold = 0
     
-    categories.map((category) => {
-      switch(category){
+    Object.entries(categories).map(([key, value]) => {
+      switch(value){
         case 'Words in Context':
           wordsincontext+=1
           break;
@@ -383,8 +376,8 @@ const useGrade = () => {
       }
     })
 
-    difficulties.map((difficulty) => {
-      switch(difficulty){
+    Object.entries(difficulties).map(([key, value]) => {
+      switch(value){
         case 'Bronze':
           bronze+=1
           break;
@@ -406,20 +399,20 @@ const useGrade = () => {
     skillImprovement.skills['Text Structure and Purpose'] = textstructureandpurpose
     skillImprovement.skills['Central Ideas and Details'] = centralideasanddetails
     skillImprovement.skills['Central Ideas and Purpose'] = centralideasandpurpose
-    skillImprovement.skills['Command of Text'] = commandoftext
+    skillImprovement.skills['Command of Textual Evidence'] = commandoftext
     skillImprovement.skills['Inferences'] = inferences
     skillImprovement.skills['Boundaries'] = boundaries
-    skillImprovement.skills['Form Structure'] = formstructure
+    skillImprovement.skills['Form Structure and Sense'] = formstructure
     skillImprovement.skills['Transitions'] = transitions
-    skillImprovement.skills['Rhetorical'] = rhetorical
-    skillImprovement.skills['Command of Quant'] = commandofquant
-    skillImprovement.skills['Cross Text'] = crosstext
+    skillImprovement.skills['Rhetorical Synthesis'] = rhetorical
+    skillImprovement.skills['Command of Quantitative Evidence'] = commandofquant
+    skillImprovement.skills['Cross-Text Connections'] = crosstext
 
     skillImprovement.skills['One-Variable Equations'] = onevariable
     skillImprovement.skills['Interpreting Linear Functions'] = interpretinglinear
     skillImprovement.skills['Systems of Linear Equations'] = systemsoflinear
     skillImprovement.skills['Building Linear Functions'] = buildinglinear
-    skillImprovement.skills['Creating one-variable equations'] = creatingone
+    skillImprovement.skills['Creating One-Variable Equations'] = creatingone
     skillImprovement.skills['Linear Inequalities'] = linearinequal
     skillImprovement.skills['Graphing Linear Relationships'] = graphinglinear
     skillImprovement.skills['Expressions and Equations in Context'] = expressionsincontext
@@ -442,7 +435,7 @@ const useGrade = () => {
     skillImprovement.skills['Volume'] = volume
     skillImprovement.skills['Trig. Ratios and Pythagorean Thm.'] = trigratios
     skillImprovement.skills['Circle Equations and Graphing'] = circleequations
-    skillImprovement.skills['Circle Arc, Angles, Chords'] = circlearcs
+    skillImprovement.skills['Circle Arc, Angles and Chords'] = circlearcs
 
     skillImprovement.levels['Bronze'] = bronze
     skillImprovement.levels['Silver'] = silver

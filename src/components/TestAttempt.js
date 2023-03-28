@@ -20,6 +20,10 @@ const TestAttempt = ({ setTestObject }) => {
   const [currentAnswersReading, setCurrentAnswersReading] = useState({})
   const [currentAnswersMath, setCurrentAnswersMath] = useState({})
 
+  const [compositeScore, setCompositeScore] = useState(0)
+  const [readingScore, setReadingScore] = useState(0)
+  const [mathScore, setMathScore] = useState(0)
+
   const [wrongAnswers, setWrongAnswers] = useState({})
   const [rightAnswers, setRightAnswers] = useState({})
   const [showGrade, setShowgrade] = useState(false)
@@ -52,18 +56,24 @@ const TestAttempt = ({ setTestObject }) => {
     const answers = gradeSAT2023PT3(currentAnswersReading, currentAnswersMath)
     setRightAnswers(answers.rightNumbers)
     setWrongAnswers(answers.wrongNumbers)
-    setTestObject(answers.skills)
     setShowgrade(true)
 
     //create object for database
     const TestName = 'SAT2023PT3'
     const currentDate = new Date()
     const formattedDate = currentDate.toDateString()
+
+    const composite = readingScore + mathScore
+
     const testReport = {
       name: TestName,
       date: formattedDate,
-      categories: answers.skills
+      readingScore,
+      mathScore,
+      compositeScore: composite,
+      categories: answers.skillsObject
     }
+
     addDocument(testReport)
   }
 
@@ -72,6 +82,16 @@ const TestAttempt = ({ setTestObject }) => {
   return (
     <div className='testattempt'>
       <div>SAT 2023 PT3</div>
+
+      <div className='flex'>
+        <div>Reading and Writing Score</div>
+        <input className='testattempt_scoreinput' onChange={(e) => setReadingScore(e.target.value)}></input>
+      </div>
+
+      <div className='flex'>
+        <div>Math Score</div>
+        <input className='testattempt_scoreinput' onChange={(e) => setMathScore(e.target.value)}></input>
+      </div>
       <div className='attempt_tabs'>
         <div className={activeSection == 'rw' ? 'attempt_tab_rw attempt_tab_rw_active' : 'attempt_tab_rw'}
         onClick={() => setActiveSection('rw')}>Reading and Writing</div>
