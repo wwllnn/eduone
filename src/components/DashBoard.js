@@ -8,7 +8,7 @@ import Sidebar from './Sidebar'
 import StudentForm from './StudentForm'
 import StudentPage from './StudentPage'
 import Home from './Home'
-
+import { useCollection } from '../hooks/useCollection'
 import { Routes, Route } from 'react-router-dom'
 
 const locations = [
@@ -25,6 +25,21 @@ const DashBoard = () => {
   const handleLocation = (location) => {
     setCity(location.value)
   }
+
+  
+  const students = useCollection(`locations/${city}/students`)
+
+  useEffect(()=> {
+    if(students.documents){
+      const firstCap = students.documents[0].firstname.charAt(0).toUpperCase()+ students.documents[0].firstname.slice(1)
+      const lastCap = students.documents[0].lastname.charAt(0).toUpperCase()+ students.documents[0].lastname.slice(1)
+      setCurrentStudent(lastCap, firstCap)
+      console.log(students.documents[0].id)
+    }
+  },[])
+
+
+
 
  
   return (

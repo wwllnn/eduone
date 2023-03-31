@@ -3,9 +3,7 @@ import './StudentPage.css'
 import { useState } from 'react'
 
 import TestAttempt from './TestAttempt'
-import Select from 'react-select'
-import { useDocument } from "../hooks/useDocument"
-
+import WrongsInput from './WrongsInput'
 
 import { useParams } from 'react-router-dom'
 import StudentInformation from './StudentInformation'
@@ -13,17 +11,10 @@ import TestReports from './TestReports'
 
 const StudentPage = ({ currentStudent }) => {
 
-  let { id } = useParams()
-
   const [tab, setTab] = useState('gradecenter')
   const [testObject, setTestObject] = useState({})
 
-
-  const testtypes = [{value:'sat2023', label:'SAT2023'},{value:'act2023', label:'ACT2023'}]
-
-  const [answers, setAnswers] = useState('')
-
-
+  //const testtypes = [{value:'sat2023', label:'SAT2023'},{value:'act2023', label:'ACT2023'}]
 
   return (
     <div className='studentpage'>
@@ -41,7 +32,7 @@ const StudentPage = ({ currentStudent }) => {
       <div className='studentpage_name'>
         {currentStudent}
       </div>
-      {tab == 'gradecenter' && <TestAttempt setTestObject={setTestObject}/>}
+      {tab == 'gradecenter' && <WrongsInput setTestObject={setTestObject}/>}
       {tab == 'testreports' && <TestReports testObject={testObject} currentStudent={currentStudent} />}
       {tab == 'studentinfo' && <StudentInformation />}
     </div>

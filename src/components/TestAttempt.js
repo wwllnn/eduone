@@ -54,8 +54,18 @@ const TestAttempt = ({ setTestObject }) => {
 
     //grade reading
     const answers = gradeSAT2023PT3(currentAnswersReading, currentAnswersMath)
-    setRightAnswers(answers.rightNumbers)
-    setWrongAnswers(answers.wrongNumbers)
+    setRightAnswers('right' + answers.rightNumbers)
+    setWrongAnswers('wrong' + answers.wrongNumbers)
+
+    console.log('hello')
+    Object.keys(rightAnswers).forEach(key=>{
+      console.log('right' + key + ' ' + rightAnswers[key]);
+    })
+
+    Object.keys(wrongAnswers).forEach(key=>{
+      console.log('wrong' + key + ' ' + wrongAnswers[key]);
+    })
+    console.log(wrongAnswers)
     setShowgrade(true)
 
     //create object for database
@@ -63,7 +73,7 @@ const TestAttempt = ({ setTestObject }) => {
     const currentDate = new Date()
     const formattedDate = currentDate.toDateString()
 
-    const composite = readingScore + mathScore
+    const composite = Number(readingScore) + Number(mathScore)
 
     const testReport = {
       name: TestName,

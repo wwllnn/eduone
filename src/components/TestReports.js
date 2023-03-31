@@ -11,7 +11,6 @@ const TestReports = ({ currentStudent }) => {
 
   let studentId = useParams('id')
 
-
   const tests = useCollection(`locations/RyRc9TabpSMfQHINLsHg/students/${studentId.id}/testreports`)
 
   return (

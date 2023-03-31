@@ -13,6 +13,7 @@
 
 .dashboard_body{
   display: flex;
+  background-color: white;
 }
 
 .dashboard_head{

@@ -95,10 +95,10 @@ const useGrade = () => {
     //categorize module 2b for reading
     if(Object.keys(wrongNumbersRWM1).length <= 10){
       //loop through answer key
-      Object.keys(SAT2023PT3RWM2ABD).map((q) => {
+      Object.keys(SAT2023PT3RWM2BBD).map((q) => {
         if(wrongNumbers.hasOwnProperty(q)){
-          categoriesRW[q] = SAT2023PT3RWM2ABD[q].skill
-          difficultiesRW[q] = SAT2023PT3RWM2ABD[q].difficulty
+          categoriesRW[q] = SAT2023PT3RWM2BBD[q].skill
+          difficultiesRW[q] = SAT2023PT3RWM2BBD[q].difficulty
         }
       })
     }
@@ -106,8 +106,10 @@ const useGrade = () => {
     //grade the first module of math
     Object.entries(currentAnswersMath).map(([key, value]) => {
       if(value == SAT2023PT3MM1[key]){
+        console.log(key + 'right')
         rightNumbers[key] = value
       } else {
+        console.log(key + 'wrong')
         wrongNumbers[key] = value
         wrongNumbersMM1[key] = value
       }
@@ -121,6 +123,7 @@ const useGrade = () => {
         if(value == SAT2023PT3MM2A[key]){
           rightNumbers[key] = value
         } else {
+          wrongNumbers[key] = value
           wrongNumbersMM2[key] = value
         }
       }) //or hard
@@ -130,6 +133,7 @@ const useGrade = () => {
         if(value == SAT2023PT3MM2B[key]){
           rightNumbers[key] = value
         } else {
+          wrongNumbers[key] = value
           wrongNumbersMM2[key] = value
         }
       })
@@ -175,6 +179,8 @@ const useGrade = () => {
       difficultiesRW
     )
 
+    if(Object)
+
     console.log('rw' + skillsRW)
 
 
@@ -201,6 +207,7 @@ const useGrade = () => {
   }
 
   const generateSAT2023PT3Skills = (categories, difficulties) => {
+
     let wordsincontext = 0
     let textstructureandpurpose = 0
     let centralideasanddetails = 0

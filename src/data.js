@@ -703,7 +703,8 @@ export const SAT2023PT3MM1BD = {
     },
     73: {
         contentdomain: 'Additional Topics',
-        skill: 'Triangles, Lines and Angles'
+        skill: 'Triangles, Lines and Angles',
+        difficulty: 'Bronze'
     },
     74: {
         contentdomain: 'Problem Solving and Data Analysis',
@@ -776,7 +777,7 @@ export const SAT2023PT3MM2ABD = {
     82: {
         contentdomain: 'Passport to Advanced Math',
         skill: 'Solving Quadratic Equations',
-        difficulty: 'Solving Quadratic Equations'
+        difficulty: 'Bronze'
     },
     83: {
         contentdomain: 'Graphing Nonlinear Functions',
@@ -889,7 +890,7 @@ export const SAT2023PT3MM2BBD = {
     77: {
         contentdomain: 'Heart of Algebra',
         skill: 'One-Variable Equations',
-        difficulty: 'bronze'
+        difficulty: 'Bronze'
     },
     78: {
         contentdomain: 'Additional Topics',

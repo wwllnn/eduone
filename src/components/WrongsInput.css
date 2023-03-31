@@ -1,0 +1,50 @@
+.wrongsinput_scoreinput{
+  width: 50px;
+  margin-left: 1rem;
+}
+
+.test_tabs{
+  display: flex;
+  margin-top: .5rem;
+}
+
+.wrongsinput_buttonscontainer{
+  height: 400px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.wrongsinput_row{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wrongsinput_row > button{
+  width: 30px;
+  height: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.wrongsinput_generate{
+  background-color: darkgreen;
+  width: 150px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clicked{
+  background-color: firebrick;
+}

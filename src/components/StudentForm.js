@@ -30,6 +30,10 @@ const StudentForm = () => {
   const[parent2middlename, setParent2middlename] = useState('')
   const[parent2lastname, setParent2lastname] = useState('')
 
+  const handleState = (e) => {
+    setState(e.label)
+  }
+
   const USAstates = [
     {value: 'al', label: 'AL'},
     {value: 'ak', label: 'AK'},
@@ -84,28 +88,6 @@ const StudentForm = () => {
   ]
 
   const [formError, setFormError] = useState('')
-
-
-  const createStudentObject = () => {
-    const studentobj = {
-      firstname,
-      middlename,
-      lastname,
-      email,
-      phone,
-      address,
-      address2,
-      zipcode,
-      city,
-      state,
-      parent1firstname,
-      parent1middlename,
-      parent1lastname,
-      parent2firstname,
-      parent2middlename,
-      parent2lastname
-    }
-  }
 
   const currentlocation = 'RyRc9TabpSMfQHINLsHg'
 
@@ -268,7 +250,7 @@ const StudentForm = () => {
 
         <div className='form_state'>
           <div>State</div>
-          <Select className='input_state' options={USAstates} />
+          <Select className='input_state' options={USAstates} onChange={(e) => handleState(e)}/>
         </div>
         
       
