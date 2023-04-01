@@ -10,7 +10,6 @@ const Sidebar = ({city, setCurrentStudent}) => {
   const [ studentNames, setStudentNames ] = useState([])
  
   const locations = useCollection(`locations/${city}/students`)
-  console.log(locations)
 
   useEffect(() => {
     if(locations.documents){

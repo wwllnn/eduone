@@ -20,20 +20,21 @@ const styles = StyleSheet.create({
     flexGrow: 1
   },
   sectionrowdiffbronze:{
-    padding: '10',
+    padding: '5 10',
     flexDirection: 'row',
     fontWeight: 'bold',
-    borderBottom: '1px solid lightgray'
+    borderBottom: '1px solid lightgray',
+    fontSize: 13
   },
   sectionrowdiffsilver:{
-    padding: '10',
+    padding: '5 10',
     flexDirection: 'row',
     fontWeight: 'bold',
     borderBottom: '1px solid lightgray',
     fontSize: 13
   },
   sectionrowdiffgold:{
-    padding: '10',
+    padding: '5 10',
     flexDirection: 'row',
     fontWeight: 'bold',
     borderBottom: '1px solid lightgray',
@@ -70,24 +71,23 @@ const TestPrint = ({ info, currentStudent }) => {
     <Document>
     <Page size='A4' style={styles.page}>
     <View>
-        <View style={styles.row}>
-          <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+
             <View>
               <Image src={slogan} style={{height: '40px', objectFit: 'contain'}}/>
             </View>
+
             <View>
               <Text>{info.date}</Text>
               <Text>Sugar Land</Text>
             </View>
-          </View>
+
         </View>
 
-        <View>
-          <View style={styles.sectiongrow}>
+          <View style={{marginTop: 10}} >
             <Text>{currentStudent}</Text>
-            <Text>{info.name}</Text>
+            <Text>SAT 2023</Text>
           </View>
-        </View>
       </View>
       <View style={{textAlign: 'center', margin: 10, border: '1px solid black'}}>
         <Text style={{backgroundColor: 'grey'}}>SAT Insight Scores</Text>
@@ -100,7 +100,7 @@ const TestPrint = ({ info, currentStudent }) => {
                 display: 'flex', 
                 flexDirection: 'row', 
                 backgroundColor: 'maroon',
-                color: 'white'
+                color: 'white',
               }}>
           <Text style={{flex: 1, textAlign: 'center'}}>Reading/Writing</Text>
           <Text style={{flex: 1, textAlign: 'center'}}>Math</Text>
@@ -153,22 +153,23 @@ const TestPrint = ({ info, currentStudent }) => {
           <Text  style={{fontSize: 14}}>Sugar Land</Text>
         </View>
       </View>
-      <View style={{border: '1px solid black'}}>
-      <View>
-          <View style={styles.sectiongrow}>
-            <Text style={{fontWeight: 'bold', margin: '10px 0', fontSize: 14}}>{currentStudent}</Text>
-            <Text style={{fontSize: 14}}>{info.name}</Text>
-          </View>
-      </View>
+      <View style={{border: '1px solid black', marginTop: 10}}>
+        <View>
+            <View style={{flexGrow: 1, margin: 10, alignItems: 'center'}}>
+              <Text style={{fontSize: 15}}>{currentStudent}</Text>
+              <Text style={{fontSize: 15}}>{info.name}</Text>
+            </View>
 
-      <View styles={{backgroundColor: 'maroon', color: 'white'}}>
-        <Text  style={{fontSize: 14}}>Reading and Writing</Text>
-      </View>
-      <View style={styles.section}>
+            <View style={{backgroundColor: 'maroon', color: 'white', marginLeft: 10, marginRight: 10, padding: 5, }}>
+              <Text style={{fontSize: 14, marginLeft: 10, textAlign: 'center'}}>Reading and Writing</Text>
+            </View>
+        </View>
 
 
-        <View style={{marginBottom: 10}}>
-          <View style={{flexDirection: 'row',backgroundColor: 'lightgray'}}>
+      <View style={{margin: '0 10'}}>
+
+        <View style={{marginBottom: 10, border: '1px solid black'}}>
+          <View style={{flexDirection: 'row',backgroundColor: 'lightgray', padding: 5}}>
             <Text style={{flexGrow: 1, fontSize: 13}}>Difficulty Levels</Text>
             <Text style={{fontSize: 13}}>Mastery %</Text>
           </View>
@@ -189,28 +190,65 @@ const TestPrint = ({ info, currentStudent }) => {
         </View>
 
         <View style={{backgroundColor: 'maroon', color: 'white', flexDirection: 'row'}}>
-          <Text style={{flexGrow: 1}}>Category</Text>
-          <Text style={{flexGrow: 1}}>Mastery %</Text>
-          <Text style={{flexGrow: 1}}>RX Hours</Text>
-        </View>
-
-        <View style={{flexDirection: 'row', border: '1px solid lightgray'}}>
-            <Text style={{fontSize: 13, marginBottom: 5, flexGrow: 1, border: '1px solid lightgray'}}>Boundaries</Text>
-            <Text style={{fontSize: 13, flexGrow: 1, border: '1px solid lightgray'}}>{info.categories.skillsRW.skills['Boundaries']}</Text>
-            <Text style={{fontSize: 13, flexGrow: 1, border: '1px solid lightgray'}}>5</Text>
+          <View style={{flex: 1, padding: 5, alignItems: 'center'}}>
+            <Text style={{fontSize: 13}}>Category</Text>
+          </View>
+          <View style={{flex: 1, padding: 5, alignItems: 'center'}}>
+            <Text style={{fontSize: 13}}>Mastery</Text>
+          </View>
+          <View style={{flex: 1, padding: 5, alignItems: 'center'}}>
+            <Text style={{fontSize: 13}}>RX Hours</Text>
+          </View>
         </View>
 
         <View style={{flexDirection: 'row'}}>
-          <Text style={{fontSize: 13, marginBottom: 5, flexGrow: 1, border: '1px solid lightgray'}}>Central Ideas and Details</Text>
-          <Text style={{fontSize: 13,  border: '1px solid lightgray'}}>{info.categories.skillsRW.skills['Central Ideas and Details']}</Text>
-          <Text style={{fontSize: 13, flexGrow: 1, border: '1px solid lightgray'}}>5</Text>
+            <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
+              <Text style={{fontSize: 13}}>Boundaries</Text>
+            </View>
+            <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center'}}>
+              <Text style={{fontSize: 13}}>{info.categories.categoryPercentages.readingP.boundariesp}%</Text>
+            </View>
+            <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center'}}>
+              <Text style={{fontSize: 13}}>5</Text>
+            </View>
         </View>
 
-        <View style={{flexDirection: 'row', borderBottom: '1px solid lightgray'}}>
-          <Text style={{fontSize: 13, marginBottom: 5, flexGrow: 1}}>Command of Quantitative Evidence</Text>
-          <Text style={{fontSize: 13}}>{info.categories.skillsRW.skills['Command of Quantitative Evidence']}</Text>
-          <Text style={{fontSize: 13, flexGrow: 1, border: '1px solid lightgray'}}>5</Text>
+        <View style={{flexDirection: 'row', marginTop: '-1px'}}>
+            <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
+              <Text style={{fontSize: 13}}>Central Ideas and Details</Text>
+            </View>
+            <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center'}}>
+              <Text style={{fontSize: 13}}>{info.categories.categoryPercentages.readingP.centralideasp}%</Text>
+            </View>
+            <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center'}}>
+              <Text style={{fontSize: 13}}>5</Text>
+            </View>
         </View>
+
+        <View style={{flexDirection: 'row', marginTop: '-1px'}}>
+            <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
+              <Text style={{fontSize: 13}}>Command of Quantitative Evidence</Text>
+            </View>
+            <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={{fontSize: 13}}>{info.categories.categoryPercentages.readingP.commandquantp}%</Text>
+            </View>
+            <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={{fontSize: 13}}>5</Text>
+            </View>
+        </View>
+
+        <View style={{flexDirection: 'row', marginTop: '-1px'}}>
+            <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
+              <Text style={{fontSize: 13}}>Command of Textual Evidence</Text>
+            </View>
+            <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={{fontSize: 13}}>{info.categories.categoryPercentages.readingP.commandquantp}%</Text>
+            </View>
+            <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={{fontSize: 13}}>5</Text>
+            </View>
+        </View>
+
 
         <View style={{flexDirection: 'row', borderBottom: '1px solid lightgray'}}>
           <Text style={{fontSize: 13, marginBottom: 5, flexGrow: 1}}>Command of Textual Evidence</Text>
@@ -236,7 +274,7 @@ const TestPrint = ({ info, currentStudent }) => {
           <Text style={{fontSize: 13, flexGrow: 1, border: '1px solid lightgray'}}>5</Text>
         </View>
 
-        <View style={{flexDirection: 'row', borderBottom: '1px solid lightgray'}}>
+        <View style={{flexDirection: 'row', borderBottom: '1px solid lightgray'}}>nm
           <Text style={{fontSize: 13, marginBottom: 5, flexGrow: 1}}>Rhetorical Synthesis</Text>
           <Text style={{fontSize: 13}}>{info.categories.skillsRW.skills['Rhetorical Synthesis']}</Text>
           <Text style={{fontSize: 13, flexGrow: 1, border: '1px solid lightgray'}}>5</Text>
