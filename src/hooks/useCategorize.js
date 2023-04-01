@@ -311,12 +311,39 @@ const useCategorize = () => {
       }
     }
 
+    const skillsArrayRW = Object.entries(skillsRW.skills) 
+    const skillsArrayM = Object.entries(skillsM.skills)
+
+
+    let rxTotalRW = skillsArrayRW.reduce(function(sum, value) {
+      return sum + value[1];
+    }, 0);
+    rxTotalRW*=5
+
+    let rxTotalM = skillsArrayM.reduce(function(sum, value) {
+      return sum + value[1];
+    }, 0);
+    rxTotalM*=5
+
+    let rxHoursRW = {}
+    let rxHoursM = {}
+
+    skillsArrayRW.forEach(e=>rxHoursRW[e[0]] = (e[1] * 5))
+    skillsArrayM.forEach(e=>rxHoursM[e[0]] = (e[1] * 5))
+
+    const rxTotal = rxTotalRW + rxTotalM
+    
 
     const skillsObject = {
       skillsRW,
       skillsM,
       difficultyPercentages,
-      categoryPercentages
+      categoryPercentages,
+      rxHoursRW,
+      rxHoursM,
+      rxTotalRW,
+      rxTotalM,
+      rxTotal
     }
     
     return {

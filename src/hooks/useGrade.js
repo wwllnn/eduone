@@ -179,26 +179,18 @@ const useGrade = () => {
       difficultiesRW
     )
 
-    if(Object)
-
-    console.log('rw' + skillsRW)
-
-
-    console.log('cm' + categoriesM)
 
     const skillsM = generateSAT2023PT3Skills(
       categoriesM,
       difficultiesM
     )
 
-    console.log('m' + skillsM)
 
     const skillsObject = {
       skillsRW,
       skillsM,
     }
     
-    console.log('obj' + skillsObject)
     return {
       rightNumbers, 
       wrongNumbers, 
