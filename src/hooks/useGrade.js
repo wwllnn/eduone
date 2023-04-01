@@ -434,7 +434,7 @@ const useGrade = () => {
     skillImprovement.skills['Volume'] = volume
     skillImprovement.skills['Trig. Ratios and Pythagorean Thm.'] = trigratios
     skillImprovement.skills['Circle Equations and Graphing'] = circleequations
-    skillImprovement.skills['Circle Arc, Angles and Chords'] = circlearcs
+    skillImprovement.skills['Circle Arcs, Angles and Chords'] = circlearcs
 
     skillImprovement.levels['Bronze'] = bronze
     skillImprovement.levels['Silver'] = silver
