@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.68c8eabd.css",
-    "main.js": "/static/js/main.058676bf.js",
-    "static/media/IBMPlexSans-SemiBold.ttf": "/static/media/IBMPlexSans-SemiBold.fffccb38819b2f4eb6ab.ttf",
-    "static/media/IBMPlexSans-Medium.ttf": "/static/media/IBMPlexSans-Medium.4c69d30a49b3ad04d7df.ttf",
-    "static/media/IBMPlexSans-Regular.ttf": "/static/media/IBMPlexSans-Regular.18aec6d70824ca7d10df.ttf",
-    "static/media/slogan.png": "/static/media/slogan.b7c245652d5be22389fe.png",
-    "index.html": "/index.html",
-    "main.68c8eabd.css.map": "/static/css/main.68c8eabd.css.map",
-    "main.058676bf.js.map": "/static/js/main.058676bf.js.map"
+    "main.css": "//wwllnn.github.io/eduone/static/css/main.68c8eabd.css",
+    "main.js": "//wwllnn.github.io/eduone/static/js/main.3fdb09a4.js",
+    "static/media/IBMPlexSans-SemiBold.ttf": "//wwllnn.github.io/eduone/static/media/IBMPlexSans-SemiBold.fffccb38819b2f4eb6ab.ttf",
+    "static/media/IBMPlexSans-Medium.ttf": "//wwllnn.github.io/eduone/static/media/IBMPlexSans-Medium.4c69d30a49b3ad04d7df.ttf",
+    "static/media/IBMPlexSans-Regular.ttf": "//wwllnn.github.io/eduone/static/media/IBMPlexSans-Regular.18aec6d70824ca7d10df.ttf",
+    "static/media/slogan.png": "//wwllnn.github.io/eduone/static/media/slogan.b7c245652d5be22389fe.png",
+    "index.html": "//wwllnn.github.io/eduone/index.html",
+    "main.68c8eabd.css.map": "//wwllnn.github.io/eduone/static/css/main.68c8eabd.css.map",
+    "main.3fdb09a4.js.map": "//wwllnn.github.io/eduone/static/js/main.3fdb09a4.js.map"
   },
   "entrypoints": [
     "static/css/main.68c8eabd.css",
-    "static/js/main.058676bf.js"
+    "static/js/main.3fdb09a4.js"
   ]
 }
