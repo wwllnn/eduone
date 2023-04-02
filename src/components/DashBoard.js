@@ -1,4 +1,5 @@
 import './DashBoard.css'
+import logo from './logo.svg'
 
 import { useEffect, useState } from 'react'
 
@@ -46,7 +47,7 @@ const DashBoard = () => {
     <div className='dashboard'>
       <div className='dashboard_head'>
         <div className='dashboard_logo'>
-          <img src='/logo.svg'/>
+          <img src={logo} />
         </div>
         <Select 
           defaultValue={locations[0]} 

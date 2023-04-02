@@ -1,4 +1,5 @@
 import './Sidebar.css'
+import plus from './plus.png'
 
 import { Link } from 'react-router-dom'
 import { useCollection } from "../hooks/useCollection"
@@ -30,7 +31,7 @@ const Sidebar = ({city, setCurrentStudent}) => {
     <div className='sidebar'>
       <div className='innersidebar'>
         <div className='addstudent'>
-          <img src='/plus.png' className='sidebar_icon'></img>
+          <img src={plus} className='sidebar_icon'></img>
           <Link className='link' to='newstudent'><div className='sidebar_text'>Add Student</div></Link>
         </div>
         <div className='student_list'>
