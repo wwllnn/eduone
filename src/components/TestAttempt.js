@@ -179,7 +179,7 @@ const TestAttempt = ({ setTestObject }) => {
         </div>))}
         {activeSection == 'm' && [...Array(44)].map((_, i) => (
         <div key={i} className='attempt_row'>
-          <div className='attempt_row_number'>{i+55}</div>
+          <div className='attempt_row_number'>{i+100}</div>
           {
             currentAnswersMath[i+55] !== 'a' && 
             <div className='attempt_row_button' onClick={() => handleClickMath(i+55, 'a')}>A</div>

@@ -406,10 +406,10 @@ const useGrade = () => {
     skillImprovement.skills['Rhetorical Synthesis'] = rhetorical
     skillImprovement.skills['Command of Quantitative Evidence'] = commandofquant
     skillImprovement.skills['Cross-Text Connections'] = crosstext
-
     skillImprovement.skills['One-Variable Equations'] = onevariable
     skillImprovement.skills['Interpreting Linear Functions'] = interpretinglinear
     skillImprovement.skills['Systems of Linear Equations'] = systemsoflinear
+    skillImprovement.skills['Systems of Quadratic and Linear Functions'] = systemsofquadratic
     skillImprovement.skills['Building Linear Functions'] = buildinglinear
     skillImprovement.skills['Creating One-Variable Equations'] = creatingone
     skillImprovement.skills['Linear Inequalities'] = linearinequal

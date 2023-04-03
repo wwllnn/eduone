@@ -104,7 +104,7 @@ const TestAttempt = ({ setTestObject }) => {
         }
         {activeSection == 'm' && mathQuestions.map((x, i) => (
           <div className='wrongsinput_row'>
-            <span>{i+54}</span>
+            <span>{i+55}</span>
             {x == 0 && <button onClick={() => handleInput('m', i)}></button>}
             {x != 0 && <button className='clicked' onClick={() => handleUninput('m', i)}></button>}
           </div>

@@ -140,7 +140,7 @@ const useCategorize = () => {
 
 
     //get skill percentages for reading
-    if(howManyWrongRW >= 10){
+    if(howManyWrongRW >= 11){
       //easy verison
       wordsincontextp = 100 - Math.round(skillsRW.skills['Words in Context'] / 11 * 100)
       textstructureandpurposep = 100 - Math.round(skillsRW.skills['Text Structure and Purpose'] / 3 * 100)
@@ -153,7 +153,7 @@ const useCategorize = () => {
       transitionsp = 100 - Math.round(skillsRW.skills['Transitions'] / 5 * 100)
       rhetoricalsynthesisp = 100 - Math.round(skillsRW.skills['Rhetorical Synthesis'] / 6 * 100)
       inferencesp = 100 - Math.round(skillsRW.skills['Inferences'] / 3 * 100)
-    } else if (howManyWrongRW < 10) {
+    } else if (howManyWrongRW <= 10) {
       //rw module 2b
       wordsincontextp = 100 - Math.round(skillsRW.skills['Words in Context'] / 10 * 100)
       textstructureandpurposep = 100 - Math.round(skillsRW.skills['Text Structure and Purpose'] / 4 * 100)
@@ -210,7 +210,7 @@ const useCategorize = () => {
     let rationalexpop = 0
 
     //get skill percentages for math
-    if(howManyWrongM >= 10){
+    if(howManyWrongM >= 11){
       //easy version
       onevariablep = 100 - Math.round(skillsM.skills['One-Variable Equations']  / 6 * 100)
       interpretlinp = 100 - Math.round(skillsM.skills['Interpreting Linear Functions'] / 2 * 100)
@@ -219,7 +219,7 @@ const useCategorize = () => {
       expresscontextp = 100 - Math.round(skillsM.skills['Expressions and Equations in Context'] / 1 * 100)
       rationalexpressp = 100 - Math.round(skillsM.skills['Rational Expressions and Equations'] / 2 * 100)
       createquadp = 100 - Math.round(skillsM.skills['Creating Quadratic and Exponential Functions'] / 2 * 100)
-      systemsquadp = 100 - Math.round(skillsM.skills['Systems of Quadratic and Linear Functions'] / 100)
+      systemsquadp = 100 - Math.round(skillsM.skills['Systems of Quadratic and Linear Functions'] / 1 * 100)
       algebrexpressp = 100 - Math.round(skillsM.skills['Algebraic Expressions'] / 2 * 100)
       solvingquadp = 100 - Math.round(skillsM.skills['Solving Quadratic Equations'] / 3 * 100)
       ratiosp = 100 - Math.round(skillsM.skills['Ratios, Rates and Proportions'] / 2 * 100)
@@ -234,10 +234,13 @@ const useCategorize = () => {
       graphingnonlinearp = 100 - Math.round(skillsM.skills['Graphing Nonlinear Functions'] / 1 * 100)
       functionnotationp = 100 - Math.round(skillsM.skills['Function Notation'] / 1 * 100)
       shapesp = 100 - Math.round(skillsM.skills['2D Shapes'] / 2 * 100)
-
-
-    } else if (howManyWrongM < 10){
+      volumep = 100 - Math.round(skillsM.skills['Volume'] / 2 * 100)
+      trigratiosp = 100 - Math.round(skillsM.skills['Trig. Ratios and Pythagorean Thm.'] / 1 * 100)
+      rationalexpop = 100 - Math.round(skillsM.skills['Rational Exponents and Radicals'] / 2 * 100)
+      
+    } else if (howManyWrongM <= 10){
       //hard version
+      shapesp = 100 - Math.round(skillsM.skills['2D Shapes'] / 2 * 100)
       onevariablep = 100 - Math.round(skillsM.skills['One-Variable Equations'] / 5 * 100)
       interpretlinp = 100 - Math.round(skillsM.skills['Interpreting Linear Functions'] / 2 * 100)
       systemslinp = 100 - Math.round(skillsM.skills['Systems of Linear Equations'] / 3 * 100)
@@ -245,7 +248,7 @@ const useCategorize = () => {
       expresscontextp = 100 - Math.round(skillsM.skills['Expressions and Equations in Context'] / 1 * 100)
       rationalexpressp = 100 - Math.round(skillsM.skills['Rational Expressions and Equations'] / 3 * 100)
       createquadp = 100 - Math.round(skillsM.skills['Creating Quadratic and Exponential Functions'] / 4 * 100)
-      systemsquadp = 100 - Math.round(skillsM.skills['Systems of Quadratic and Linear Functions'] / 100)
+      systemsquadp = 100 - Math.round(skillsM.skills['Systems of Quadratic and Linear Functions'] / 1 * 100)
       algebrexpressp = 100 - Math.round(skillsM.skills['Algebraic Expressions'] / 1 * 100)
       solvingquadp = 100 - Math.round(skillsM.skills['Solving Quadratic Equations'] / 5 * 100)
       ratiosp = 100 - Math.round(skillsM.skills['Ratios, Rates and Proportions'] / 2 * 100)
@@ -257,6 +260,11 @@ const useCategorize = () => {
       volumep = 100 - Math.round(skillsM.skills['Volume'] / 1 * 100)
       rationalexpop = 100 - Math.round(skillsM.skills['Rational Exponents and Radicals'] / 2 * 100)
       linearinequalp = 100 - Math.round(skillsM.skills['Linear Inequalities'] / 2 * 100)
+      graphinglinearp = 100
+      functionnotationp = 100 - Math.round(skillsM.skills['Function Notation'] / 1 * 100)
+      circlearcsp = 100 - Math.round(skillsM.skills['Circle Arcs, Angles and Chords'] / 1 * 100)
+      graphingnonlinearp = 100 - Math.round(skillsM.skills['Graphing Nonlinear Functions'] / 1 * 100)
+      creatingonep = 100 - Math.round(skillsM.skills['Creating One-Variable Equations'] / 1 * 100)
     }
 
     const difficultyPercentages = {
@@ -391,7 +399,6 @@ const useCategorize = () => {
     let triangles = 0
     let volume = 0
     let trigratios = 0
-    let circleequations = 0
     let circlearcs = 0
 
     let bronze = 0
@@ -514,9 +521,6 @@ const useCategorize = () => {
         case 'Trig. Ratios and Pythagorean Thm.':
           trigratios=+1
           break;
-        case 'Circle Equations and Graphing':
-          circleequations+=1
-          break;
         case 'Circle Arcs, Angles and Chords':
           circlearcs+=1
           break;
@@ -557,7 +561,7 @@ const useCategorize = () => {
     skillImprovement.skills['One-Variable Equations'] = onevariable
     skillImprovement.skills['Interpreting Linear Functions'] = interpretinglinear
     skillImprovement.skills['Systems of Linear Equations'] = systemsoflinearequations
-    skillImprovement.skills['Systems of Quadratic and Linear Functions'] = systemsoflinearequations
+    skillImprovement.skills['Systems of Quadratic and Linear Functions'] = systemsofquadraticandlinearfunctions
     skillImprovement.skills['Building Linear Functions'] = buildinglinear
     skillImprovement.skills['Creating One-Variable Equations'] = creatingone
     skillImprovement.skills['Linear Inequalities'] = linearinequal
@@ -581,8 +585,7 @@ const useCategorize = () => {
     skillImprovement.skills['Triangles, Lines and Angles'] = triangles
     skillImprovement.skills['Volume'] = volume
     skillImprovement.skills['Trig. Ratios and Pythagorean Thm.'] = trigratios
-    skillImprovement.skills['Circle Equations and Graphing'] = circleequations
-    skillImprovement.skills['Circle Arc, Angles and Chords'] = circlearcs
+    skillImprovement.skills['Circle Arcs, Angles and Chords'] = circlearcs
 
     skillImprovement.levels['Bronze'] = bronze
     skillImprovement.levels['Silver'] = silver
