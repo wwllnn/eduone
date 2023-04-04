@@ -51,7 +51,7 @@ Font.register({
   src: semibold
 })
 
-const TestPrint = ({ info, currentStudent }) => {
+const TestPrint = ({ info, currentStudent, currentCity }) => {
 
   const readingNumberWrong = (54 - 
     info.categories.skillsRW.levels.Bronze -
@@ -64,17 +64,8 @@ const TestPrint = ({ info, currentStudent }) => {
     info.categories.skillsM.levels.Silver-
     info.categories.skillsM.levels.Gold)
 
-  const readingRX = (
-    (800 - info.readingScore) * .6
-  )
-
-  const mathRX = (
-    (800 - info.mathScore) * .6
-  )
-
-  const totalRX = (
-    Number(readingRX) + Number(mathRX)
-  )
+  const mathRXadditional = info.categories.rxTotalM + 20
+  const totalRXadditional = info.categories.rxTotal + 20
 
   return (
     <Document>
@@ -87,7 +78,7 @@ const TestPrint = ({ info, currentStudent }) => {
 
             <View>
               <Text style={{fontFamily: 'IBM Plex Sans-SemiBold'}}>{info.date}</Text>
-              <Text style={{fontFamily: 'IBM Plex Sans-SemiBold'}}>Sugar Land</Text>
+              <Text style={{fontFamily: 'IBM Plex Sans-SemiBold'}}>{currentCity.label}</Text>
             </View>
         </View>
 
@@ -132,7 +123,6 @@ const TestPrint = ({ info, currentStudent }) => {
             <Text>/44</Text>
           </View>
         </View>
-
       </View>
 
       <View style={{marginLeft: 10, marginTop: 10, marginRight: 10, backgroundColor: 'lightgray'}}>
@@ -157,8 +147,8 @@ const TestPrint = ({ info, currentStudent }) => {
         </View>
         <View style={{display: 'flex', flexDirection: 'row'}}>
           <Text style={{borderRight:'1px solid black', flex: 1, textAlign: 'center', padding: 5}}>{info.categories.rxTotalRW}</Text>
-          <Text style={{borderRight:'1px solid black', flex: 1, textAlign: 'center', padding: 5}}>{info.categories.rxTotalM}</Text>
-          <Text style={{ flex: 1, textAlign: 'center', padding: 5}}>{info.categories.rxTotal}</Text>
+          <Text style={{borderRight:'1px solid black', flex: 1, textAlign: 'center', padding: 5}}>{mathRXadditional}</Text>
+          <Text style={{ flex: 1, textAlign: 'center', padding: 5}}>{totalRXadditional}</Text>
         </View>
       </View>
     </Page>
@@ -170,7 +160,7 @@ const TestPrint = ({ info, currentStudent }) => {
         </View>
         <View style={{textAlign: 'flex-end'}}>
           <Text style={{fontSize: 14, fontFamily: 'IBM Plex Sans-SemiBold'}}>{info.date}</Text>
-          <Text  style={{fontSize: 14, fontFamily: 'IBM Plex Sans-SemiBold'}}>Sugar Land</Text>
+          <Text  style={{fontSize: 14, fontFamily: 'IBM Plex Sans-SemiBold'}}>{currentCity.label}</Text>
         </View>
       </View>
       <View style={{border: '1px solid black', marginTop: 10}}>
@@ -278,7 +268,7 @@ const TestPrint = ({ info, currentStudent }) => {
 
         <View style={{flexDirection: 'row', marginTop: '-1px'}}>
             <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
-              <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Command of Textual Evidence</Text>
+              <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Using Textual Evidence</Text>
             </View>
             <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
               <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>{info.categories.categoryPercentages.readingP.commandoftextualp}%</Text>
@@ -290,7 +280,7 @@ const TestPrint = ({ info, currentStudent }) => {
 
         <View style={{flexDirection: 'row', marginTop: '-1px'}}>
             <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
-              <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Quantitative Evidence</Text>
+              <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Using Quantitative Evidence</Text>
             </View>
             <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
               <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>{info.categories.categoryPercentages.readingP.commandquantp}%</Text>
@@ -330,7 +320,7 @@ const TestPrint = ({ info, currentStudent }) => {
 
         <View style={{flexDirection: 'row', marginTop: '-1px'}}>
             <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
-              <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Form Structure and Sense</Text>
+              <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Form, Structure, and Sense</Text>
             </View>
             <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
               <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>{info.categories.categoryPercentages.readingP.formstructurep}%</Text>
@@ -391,7 +381,7 @@ const TestPrint = ({ info, currentStudent }) => {
         </View>
         <View style={{textAlign: 'flex-end'}}>
           <Text style={{fontSize: 14, fontFamily: 'IBM Plex Sans-SemiBold'}}>{info.date}</Text>
-          <Text  style={{fontSize: 14, fontFamily: 'IBM Plex Sans-SemiBold'}}>Sugar Land</Text>
+          <Text  style={{fontSize: 14, fontFamily: 'IBM Plex Sans-SemiBold'}}>{currentCity.label}</Text>
         </View>
       </View>
       <View style={{border: '1px solid black', marginTop: 10}}>
@@ -496,7 +486,7 @@ const TestPrint = ({ info, currentStudent }) => {
 
         <View style={{flexDirection: 'row', marginTop: '-1px'}}>
           <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
-            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Creating One-Var. Equations</Text>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Creating One-Variable Eqns.</Text>
           </View>
           <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
             <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>{info.categories.categoryPercentages.mathP.creatingonep}%</Text>
@@ -654,7 +644,7 @@ const TestPrint = ({ info, currentStudent }) => {
         </View>
         <View style={{textAlign: 'flex-end'}}>
           <Text style={{fontSize: 14, fontFamily: 'IBM Plex Sans-SemiBold'}}>{info.date}</Text>
-          <Text  style={{fontSize: 14, fontFamily: 'IBM Plex Sans-SemiBold'}}>Sugar Land</Text>
+          <Text  style={{fontSize: 14, fontFamily: 'IBM Plex Sans-SemiBold'}}>{currentCity.label}</Text>
         </View>
       </View>
 
@@ -763,7 +753,7 @@ const TestPrint = ({ info, currentStudent }) => {
 
         <View style={{flexDirection: 'row', marginTop: '-1px', marginLeft: 10, marginRight: 10}}>
             <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
-              <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Trig. Ratios and Pythagorean Thm. </Text>
+              <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Trig. Ratios/Pythag. Theorem </Text>
             </View>
             <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
               <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>{info.categories.categoryPercentages.mathP.trigratiosp}%</Text>
@@ -785,6 +775,54 @@ const TestPrint = ({ info, currentStudent }) => {
           </View>
         </View>
 
+        <View style={{flexDirection: 'row', marginTop: '-1px', marginLeft: 10, marginRight: 10}}>
+          <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Inferences From Reports</Text>
+          </View>
+          <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>N/A</Text>
+          </View>
+          <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>5</Text>
+          </View>
+        </View>
+
+        <View style={{flexDirection: 'row', marginTop: '-1px', marginLeft: 10, marginRight: 10}}>
+          <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Unit Conversion</Text>
+          </View>
+          <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>N/A</Text>
+          </View>
+          <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>5</Text>
+          </View>
+        </View>
+
+        <View style={{flexDirection: 'row', marginTop: '-1px', marginLeft: 10, marginRight: 10}}>
+          <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Categorical Data</Text>
+          </View>
+          <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>N/A</Text>
+          </View>
+          <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>5</Text>
+          </View>
+        </View>
+
+        <View style={{flexDirection: 'row', marginTop: '-1px', marginLeft: 10, marginRight: 10}}>
+          <View style={{flex: 1, border: '1px solid lightgray', padding: 5, alignItems: 'center'}}>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>Circle Equations/Graphing</Text>
+          </View>
+          <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>N/A</Text>
+          </View>
+          <View style={{flex: 1, border: '1px solid lightgray', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{fontSize: 10, fontFamily: 'IBM Plex Sans-SemiBold'}}>5</Text>
+          </View>
+        </View>
+
         <View style={{flexDirection: 'row', marginBottom: 10, marginTop: 10, marginLeft: 10, marginRight: 10}}>
           <View style={{flex: 1, borderTop: '1px solid black', borderLeft: '1px solid black', borderBottom: '1px solid black', padding: 5, alignItems: 'center'}}>
             <Text style={{fontSize: 13, fontFamily: 'IBM Plex Sans-SemiBold'}}>Total</Text>
@@ -793,7 +831,7 @@ const TestPrint = ({ info, currentStudent }) => {
             <Text style={{fontSize: 13, fontFamily: 'IBM Plex Sans-SemiBold'}}></Text>
           </View>
           <View style={{flex: 1, borderTop: '1px solid black', borderRight: '1px solid black', borderBottom: '1px solid black', marginLeft: '-1px', padding: 5, alignItems: 'center', justifyContent: 'center'}}>
-            <Text style={{fontSize: 13, fontFamily: 'IBM Plex Sans-SemiBold'}}>{info.categories.rxTotalM}</Text>
+            <Text style={{fontSize: 13, fontFamily: 'IBM Plex Sans-SemiBold'}}>{mathRXadditional}</Text>
           </View>
         </View>
 

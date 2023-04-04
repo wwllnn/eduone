@@ -13,35 +13,33 @@ import { useCollection } from '../hooks/useCollection'
 import { Routes, Route } from 'react-router-dom'
 
 const locations = [
-  {value: 'RyRc9TabpSMfQHINLsHg', label: 'Sugar Land, TX'},
-  {value: 'w5y05cHtvewfkkneohRP', label: 'Frisco, TX'},
+  {value: 'RyRc9TabpSMfQHINLsHg', label: 'Sugar Land'},
+  {value: 'w5y05cHtvewfkkneohRP', label: 'Frisco'},
+  {value: 'sgsAqoT4pjLvuNSm4EAD', label: 'Memorial'},
+  {value: 'Mf92shgIW8L9Kq7SImFC', label: 'Rockville'},
+  {value: 'SOpNzc5r5Z0hwNXaqNtc', label: 'Herndon'}
 ]
-
 
 const DashBoard = () => {
 
-  const [city, setCity] = useState('RyRc9TabpSMfQHINLsHg')
+  const [currentCity, setCurrentCity] = useState('RyRc9TabpSMfQHINLsHg')
   const [currentStudent, setCurrentStudent] = useState('')
 
   const handleLocation = (location) => {
-    setCity(location.value)
+    setCurrentCity(location)
+    console.log(currentCity)
   }
 
-  
-  const students = useCollection(`locations/${city}/students`)
+  const students = useCollection(`locations/${currentCity.value}/students`)
 
+  //just get first student
   useEffect(()=> {
     if(students.documents){
-      const firstCap = students.documents[0].firstname.charAt(0).toUpperCase()+ students.documents[0].firstname.slice(1)
-      const lastCap = students.documents[0].lastname.charAt(0).toUpperCase()+ students.documents[0].lastname.slice(1)
+      const firstCap = students.documents[0].firstname.charAt(0).toUpperCase() + students.documents[0].firstname.slice(1)
+      const lastCap = students.documents[0].lastname.charAt(0).toUpperCase() + students.documents[0].lastname.slice(1)
       setCurrentStudent(lastCap, firstCap)
-      console.log(students.documents[0].id)
     }
   },[])
-
-
-
-
  
   return (
     <div className='dashboard'>
@@ -57,12 +55,12 @@ const DashBoard = () => {
         />
       </div>
       <div className='dashboard_body'>
-      <Sidebar city={city} setCurrentStudent={setCurrentStudent}/>
+      <Sidebar currentCity={currentCity} setCurrentStudent={setCurrentStudent}/>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/newstudent' element={<StudentForm />} />
-        <Route path='/student/:id' 
-          element={currentStudent && <StudentPage currentStudent={currentStudent}/>} 
+        <Route path='/newstudent' element={<StudentForm currentCity={currentCity} />} />
+        <Route path='/student/:id'
+          element={currentStudent && <StudentPage currentStudent={currentStudent} currentCity={currentCity}/>} 
         />
       </Routes>
       </div>

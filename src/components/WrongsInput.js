@@ -6,10 +6,10 @@ import { useParams } from 'react-router-dom'
 
 import useCategorize from '../hooks/useCategorize'
 
-const TestAttempt = ({ setTestObject }) => {
+const TestAttempt = ({ setTestObject, currentCity }) => {
 
   const student = useParams('id')
-  const { addDocument } = useFirestore(`locations/RyRc9TabpSMfQHINLsHg/students/${student.id}/testreports`)
+  const { addDocument } = useFirestore(`locations/${currentCity.value}/students/${student.id}/testreports`)
 
   const { generatereportSAT2023PT3 } = useCategorize()
 
@@ -56,7 +56,7 @@ const TestAttempt = ({ setTestObject }) => {
       //create object for database
       const TestName = 'SAT2023PT3'
       const currentDate = new Date()
-      const formattedDate = currentDate.toDateString()
+      const formattedDate = currentDate.toLocaleDateString()
   
       const composite = Number(readingScore) + Number(mathScore)
   

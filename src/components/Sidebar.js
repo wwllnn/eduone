@@ -6,11 +6,11 @@ import { useCollection } from "../hooks/useCollection"
 import { useEffect, useState } from 'react'
 
 
-const Sidebar = ({city, setCurrentStudent}) => {
+const Sidebar = ({currentCity, setCurrentStudent}) => {
 
   const [ studentNames, setStudentNames ] = useState([])
  
-  const locations = useCollection(`locations/${city}/students`)
+  const locations = useCollection(`locations/${currentCity.value}/students`)
 
   useEffect(() => {
     if(locations.documents){

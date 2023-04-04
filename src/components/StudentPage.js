@@ -9,10 +9,11 @@ import { useParams } from 'react-router-dom'
 import StudentInformation from './StudentInformation'
 import TestReports from './TestReports'
 
-const StudentPage = ({ currentStudent }) => {
+const StudentPage = ({ currentStudent, currentCity }) => {
 
   const [tab, setTab] = useState('gradecenter')
   const [testObject, setTestObject] = useState({})
+  console.log(currentCity)
 
   //const testtypes = [{value:'sat2023', label:'SAT2023'},{value:'act2023', label:'ACT2023'}]
 
@@ -32,8 +33,8 @@ const StudentPage = ({ currentStudent }) => {
       <div className='studentpage_name'>
         {currentStudent}
       </div>
-      {tab == 'gradecenter' && <WrongsInput setTestObject={setTestObject}/>}
-      {tab == 'testreports' && <TestReports testObject={testObject} currentStudent={currentStudent} />}
+      {tab == 'gradecenter' && <WrongsInput setTestObject={setTestObject} currentCity={currentCity}/>}
+      {tab == 'testreports' && <TestReports testObject={testObject} currentStudent={currentStudent} currentCity={currentCity} />}
       {tab == 'studentinfo' && <StudentInformation />}
     </div>
   )

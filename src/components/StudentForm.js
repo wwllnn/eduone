@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 import { useParams } from 'react-router-dom'
 
-const StudentForm = () => {
+const StudentForm = ({currentCity}) => {
 
 
   //form info states
@@ -89,9 +89,8 @@ const StudentForm = () => {
 
   const [formError, setFormError] = useState('')
 
-  const currentlocation = 'RyRc9TabpSMfQHINLsHg'
 
-  const { addDocument } = useFirestore('locations/RyRc9TabpSMfQHINLsHg/students')
+  const { addDocument } = useFirestore(`locations/${currentCity.value}/students`)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
