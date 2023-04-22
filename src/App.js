@@ -3,8 +3,6 @@ import DashBoard from './components/DashBoard';
 import { BrowserRouter } from 'react-router-dom';
 
 
-
-
 function App() {
   return (
     <BrowserRouter>

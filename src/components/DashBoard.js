@@ -27,7 +27,6 @@ const DashBoard = () => {
 
   const handleLocation = (location) => {
     setCurrentCity(location)
-    console.log(currentCity)
   }
 
   const students = useCollection(`locations/${currentCity.value}/students`)

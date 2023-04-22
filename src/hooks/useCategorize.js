@@ -325,19 +325,27 @@ const useCategorize = () => {
 
     let rxTotalRW = skillsArrayRW.reduce(function(sum, value) {
       return sum + value[1];
-    }, 0);
-    rxTotalRW*=5
+    }, 0)
+
+    rxTotalRW*=10
+    if(rxTotalRW > 275){
+      rxTotalRW = 275
+    }
 
     let rxTotalM = skillsArrayM.reduce(function(sum, value) {
       return sum + value[1];
     }, 0);
-    rxTotalM*=5
+
+    rxTotalM*=10
+    if(rxTotalM > 255){
+      rxTotalM = 255
+    }
 
     let rxHoursRW = {}
     let rxHoursM = {}
 
-    skillsArrayRW.forEach(e=>rxHoursRW[e[0]] = (e[1] * 5))
-    skillsArrayM.forEach(e=>rxHoursM[e[0]] = (e[1] * 5))
+    skillsArrayRW.forEach(e=>rxHoursRW[e[0]] = (e[1] * 10))
+    skillsArrayM.forEach(e=>rxHoursM[e[0]] = (e[1] * 10))
 
     const rxTotal = rxTotalRW + rxTotalM
     
